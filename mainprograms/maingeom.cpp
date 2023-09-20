@@ -38,5 +38,5 @@ void ShapeFunc1D(){
         cout << "x = " << x << "\t|\tgradx = " << gradx << endl;
     }
 
-    return 0;
+    return ;
 }

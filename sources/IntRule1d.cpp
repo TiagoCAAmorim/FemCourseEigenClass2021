@@ -16,18 +16,26 @@ using namespace std;
 #define PI 3.141592654
 
 IntRule1d::IntRule1d(){
-
+    SetOrder(0);
 }
 
 IntRule1d::IntRule1d(int order) : IntRule(order) {
-    std::cout << "\nPLEASE IMPLEMENT ME\n" << __PRETTY_FUNCTION__ << std::endl;
-    DebugStop();
+    SetOrder(order);
 }
 
 void IntRule1d::SetOrder(int order) {
+    if(order < 0 || order > MaxOrder()){
+        DebugStop();
+    }
     fOrder = order;
-    std::cout << "\nPLEASE IMPLEMENT ME\n" << __PRETTY_FUNCTION__ << std::endl;
-    DebugStop();
+    int np = order/2 +1;
+    VecDouble co(np);
+    fWeights.resize(np,1);
+    gauleg(-1., 1., co, fWeights);
+    this->fPoints.resize(np,1);
+    for (int ip=0; ip<np; ip++){
+        fPoints(ip,0) = co[ip];
+    }
 }
 
 void IntRule1d::gauleg(const double x1, const double x2, VecDouble &co, VecDouble &w){

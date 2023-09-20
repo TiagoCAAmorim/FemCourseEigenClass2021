@@ -45,5 +45,4 @@ void Integrate1D (){
         integral += val*weight;
     }
     std::cout << "espera se 2/3 obtem se " << integral << std::endl;
-    return 0;
 }
