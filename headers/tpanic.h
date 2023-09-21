@@ -12,6 +12,7 @@
 ///\cond
 #include <iostream>
 #include <exception>
+#include <string>
 ///\endcond
 
 #ifdef USING_MKL
@@ -24,15 +25,29 @@
 
 extern bool PanicMessage;
 
-static void DebugStop()
-{
-    if(PanicMessage)
-    {
+static void DebugStop(){
+    if(PanicMessage)    {
         std::cout << "\nYour chance to put a breakpoint here\n" << std::flush;
     }
     std::bad_exception myex;
     throw myex;
-
 }
+
+static void DebugStop(std::string fail_message){
+    bool previous_PanicMessage = PanicMessage;
+    if(fail_message.size() > 0){
+        std::cout << "\n ######## " << fail_message << " ########\n\n" << std::flush;
+        PanicMessage = false;
+    }
+    DebugStop();
+    PanicMessage = previous_PanicMessage;
+}
+
+static void DebugStop(bool not_fail_condition, std::string fail_message){
+    if(!not_fail_condition){
+        DebugStop(fail_message);
+    }
+}
+
 #endif // USING_MKL
 #endif // FemSC_Panic_h
