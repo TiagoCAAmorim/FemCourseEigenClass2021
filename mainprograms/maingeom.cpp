@@ -36,7 +36,5 @@ void ShapeFunc1D(){
         geom1d.GradX(xi, NodeCo, x, gradx);
         cout << "------ csi = " << xi[0] << " ------" << endl;
         cout << "x = " << x << "\t|\tgradx = " << gradx << endl;
-    }
-
-    return ;
+    }    
 }

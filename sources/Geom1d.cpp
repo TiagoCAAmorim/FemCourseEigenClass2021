@@ -74,7 +74,7 @@ void Geom1d::GetNodes(VecInt &nodes) const {
 }
 
 int Geom1d::NodeIndex(int node) const {
-    if(node<0 || node > 2) DebugStop();
+    if(node<0 || node > 1) DebugStop();
     return fNodeIndices[node];
 }
 
