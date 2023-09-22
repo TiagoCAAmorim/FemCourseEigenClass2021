@@ -89,7 +89,6 @@ void CompElement::SetCompMesh(CompMesh *mesh) {
 }
 
 void CompElement::InitializeIntPointData(IntPointData &data) const {
-
     const int dim = this->Dimension();
     const int nshape = this->NShapeFunctions();
     const int nstate = this->GetStatement()->NState();
@@ -106,7 +105,6 @@ void CompElement::InitializeIntPointData(IntPointData &data) const {
     data.solution.resize(1);
     data.dsoldksi.resize(1, 1);
     data.dsoldx.resize(1, 1);
-
 }
 
 void CompElement::ComputeRequiredData(IntPointData &data, VecDouble &intpoint) const {
@@ -169,21 +167,33 @@ void CompElement::Convert2Axes(const MatrixDouble &dphi, const MatrixDouble &jac
 }
 
 void CompElement::CalcStiff(MatrixDouble &ek, MatrixDouble &ef) const {
-    // First thing you need is the variational formulation
     MathStatement *material = this->GetStatement();
     if (!material) {
         std::cout << "Error at CompElement::CalcStiff" << std::endl;
         return;
     }
-    // Second, you should clear the matrices you're going to compute
     ek.setZero();
     ef.setZero();
 
-    //+++++++++++++++++
-    // Please implement me
-    std::cout << "\nPLEASE IMPLEMENT ME\n" << __PRETTY_FUNCTION__ << std::endl;
-    DebugStop();
-    //+++++++++++++++++
+    IntRule *intrule = this->GetIntRule();
+    int maxIntOrder = intrule->MaxOrder();
+    intrule->SetOrder(maxIntOrder);
+
+    int dim = Dimension();
+    int nstate = material->NState();
+
+    double weight = 0.;
+
+    IntPointData data;
+    this->InitializeIntPointData(data);
+    int nintpoints = intrule->NPoints();
+
+    for (int nint = 0; nint < nintpoints; nint++){
+        intrule->Point(nint, data.ksi, weight);
+        this->ComputeRequiredData(data, data.ksi);
+        weight *= fabs(data.detjac);
+        material->Contribute(data, weight, ek, ef);
+    }
 }
 
 void CompElement::EvaluateError(std::function<void(const VecDouble &loc, VecDouble &val, MatrixDouble &deriv) > fp, VecDouble &errors) const {

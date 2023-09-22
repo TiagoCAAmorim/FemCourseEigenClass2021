@@ -10,7 +10,7 @@ target_link_libraries (Integration Eigen3::Eigen)
 add_executable(Geometry maingeom.cpp ${SOURCES} ${HEADERS})
 target_link_libraries (Geometry Eigen3::Eigen)
 
-add_executable(Stiff mainstiff.cpp ${SOURCES} ${HEADERS})
+add_executable(Stiff stiff.cpp ${SOURCES} ${HEADERS})
 target_link_libraries (Stiff Eigen3::Eigen)
 
 add_executable(TestIntegrate TestIntegrate.cpp ${SOURCES} ${HEADERS})
