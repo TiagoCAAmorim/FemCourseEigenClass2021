@@ -33,3 +33,7 @@
 
 # VSCode build folder
 build
+
+# Help files generated with Doxygen
+Doxygen/html/
+Doxygen/latex/
