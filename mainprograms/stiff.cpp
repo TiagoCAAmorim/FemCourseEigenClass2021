@@ -22,7 +22,7 @@ int main() {
 
 void CallStiffFunc(){
 
-    std::cout << "Setting up geometry\n";
+    std::cout << "Setting up geometric mesh\n";
     const int dim = 2;
     const int numnodes = 3;
     GeoMesh gmesh;
@@ -51,6 +51,7 @@ void CallStiffFunc(){
     VecInt nodeindices_h(2);
     nodeindices_h << 0,1;
     int index_h = 0;
+    // Builds element and adds to geometric mesh
     GeoElementTemplate<Geom1d> geo_h(nodeindices_h,materialid,&gmesh,index_h);
 
     std::cout << "Setting up 'Vertical beam': #1\n";
@@ -63,12 +64,12 @@ void CallStiffFunc(){
     int order = 1;
     CompMesh cmesh(&gmesh);
     cmesh.SetDefaultOrder(order);
-    cmesh.SetMathStatement(materialid, &poi);
+    cmesh.SetMathStatement(materialid, &poi); //Adds material to computational mesh
     
     MatrixDouble ek(order+1,order+1),ef(order+1,1);
 
     std::cout << "Stiffness matrix for 'Horizontal beam'\n";
-    CompElementTemplate<Shape1d> cel_h(index_h,&cmesh,&geo_h);
+    CompElementTemplate<Shape1d> cel_h(index_h,&cmesh,&geo_h); // Creates computational element and adds to Computational mesh
     cel_h.CalcStiff(ek, ef);
     cout << ek << endl;
 
