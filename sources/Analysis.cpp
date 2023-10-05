@@ -84,8 +84,10 @@ void Analysis::RunSimulation() {
     int solsize = Solution.rows();
     VecDouble sol(solsize);
     
+    std::cout<< "Solution coefficients:" <<endl;
     for (int i = 0; i < solsize; i++) {
         sol[i] = Solution(i, 0);
+        std::cout<< "  " << sol[i] <<endl;
     }
     cmesh->LoadSolution(sol);
 }

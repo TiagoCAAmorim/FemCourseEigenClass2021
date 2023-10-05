@@ -59,17 +59,39 @@ void Assemble::Compute(SparseMat &globmat, MatrixDouble &rhs) {
         CompElement *cel = cmesh->GetElement(el);
 
         int nshape = cel->NShapeFunctions();
-        int nstate = cel->GetStatement()->NState();
-        MatrixDouble ek(nstate * nshape, nstate * nshape);
-        MatrixDouble ef(nstate * nshape, 1);
+        int nstate = cel->GetStatement()->NState(); // Number of state variables (right-side function dimension)
+        int neqs = nstate * nshape;
+        MatrixDouble ek(neqs, neqs);
+        MatrixDouble ef(neqs, 1);
         ek.setZero();
         ef.setZero();
 
         cel->CalcStiff(ek, ef);
         
-        //+++++++++++++++++
-        std::cout << "\nPLEASE IMPLEMENT ME\n" << __PRETTY_FUNCTION__ << std::endl;
-        DebugStop();
-        //+++++++++++++++++
+        // Creates destiny indices
+        VecInt destIndex(neqs);
+        int count = 0;
+        destIndex.setZero();
+        const int64_t ndof = cel->NDOF();
+        for (int i=0; i<ndof; i++){
+            DOF& dofi = cel->GetDOF(i);
+            const int64_t firstEq = dofi.GetFirstEquation();
+            const int64_t neqDofi = dofi.GetNShape() * dofi.GetNState();
+            for (int idofi=0; idofi<neqDofi; idofi++){
+                destIndex[count++] = firstEq + idofi;
+            }
+        }
+
+        // Assemble blobal matrix and vector
+        for (int i=0; i<neqs; i++){
+            int64_t dest_i = destIndex[i];
+            rhs(dest_i,0) += ef(i,0);
+            for (int j=0; j<neqs; j++){
+                int64_t dest_j = destIndex[j];
+                globmat.coeffRef(dest_i,dest_j) += ek(i,j);         
+            }
+        }
+        
+        
     }
 }

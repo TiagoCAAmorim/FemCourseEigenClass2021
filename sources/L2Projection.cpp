@@ -69,7 +69,7 @@ void L2Projection::Contribute(IntPointData &data, double weight, MatrixDouble &E
         DebugStop();
     }
 
-    VecDouble result(nstate);
+    VecDouble result(nstate); // Will carry the boundary condition value
     result[0] = Val2()(0,0);
     MatrixDouble deriv(data.x.size(), nstate);
     deriv.setZero();
@@ -79,20 +79,15 @@ void L2Projection::Contribute(IntPointData &data, double weight, MatrixDouble &E
         SolutionExact(data.x, result, deriv);
     }
 
-    //+++++++++++++++++
-    // Please implement me
-    std::cout << "\nPLEASE IMPLEMENT ME\n" << __PRETTY_FUNCTION__ << std::endl;
-    DebugStop();
-
     switch (this->GetBCType()) {
-
-        case 0:
+        case 0: //Dirichilet: u
         {
-            // Your code here
+            EF += weight * data.phi * result[0] * gBigNumber;
+            EK += gBigNumber * weight * data.phi * data.phi.transpose();
             break;
         }
 
-        case 1:
+        case 1: //Neumann: sigma(u)
         {
             // Your code here
             break;
@@ -103,7 +98,6 @@ void L2Projection::Contribute(IntPointData &data, double weight, MatrixDouble &E
             std::cout << __PRETTY_FUNCTION__ << " at line " << __LINE__ << " not implemented\n";
         }
     }
-    //+++++++++++++++++
 }
 
 int L2Projection::NEvalErrors() const {

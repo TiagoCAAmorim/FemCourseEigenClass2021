@@ -37,14 +37,16 @@ void exact(const VecDouble &point,VecDouble &val, MatrixDouble &deriv);
 
 int main ()
 {
+    // Geometric mesh created, with data read from a Gmsh file format: nodes, elements, material id
     GeoMesh gmesh;
     ReadGmsh read;
-    std::string filename("oneD.msh");
+    std::string filename("D:/FemCourseEigenClass2021/mainprograms/oneD.msh");
 #ifdef MACOSX
     filename = "../"+filename;
 #endif
     read.Read(gmesh,filename);
 
+    // Created comp mesh and defined mathstatement 
     CompMesh cmesh(&gmesh);
     MatrixDouble perm(3,3);
     perm.setZero();
@@ -52,37 +54,45 @@ int main ()
     perm(1,1) = 1.;
     perm(2,2) = 1.;
     Poisson *mat1 = new Poisson(1,perm);
-    mat1->SetDimension(1);
+    mat1->SetDimension(1); // This mathstatement will be applied to 1D elements
     
+    // Lambda function to define right-side of differential equation
     auto force = [](const VecDouble &x, VecDouble &res)
     {
-        res[0] = 1.;
+        res[0] = 1.; // Poisson: -u'' = 1; 'Standard problem': res[0] = x[0]
     };
     mat1->SetForceFunction(force);
+
+    // Boundary conditions
     MatrixDouble proj(1,1),val1(1,1),val2(1,1);
     proj.setZero();
     val1.setZero();
     val2.setZero();
+    // L2 projection solves u=f => find u that approximates F in the function space
+    // 0 => Dirichilet 
     L2Projection *bc_linha = new L2Projection(0,2,proj,val1,val2);
     L2Projection *bc_point = new L2Projection(0,3,proj,val1,val2);
-    std::vector<MathStatement *> mathvec = {0,mat1,bc_point,bc_linha};
+
+    // Defining mathstatements as a vector and passing to computational mesh
+    std::vector<MathStatement *> mathvec = {nullptr,mat1,bc_linha,bc_point};
     cmesh.SetMathVec(mathvec);
-    cmesh.SetDefaultOrder(2);
+    cmesh.SetDefaultOrder(1);
+
+    // Creates the computational elements
     cmesh.AutoBuild();
     cmesh.Resequence();
-
-    
-    
+   
+    // Creates matrices by element, global matrices and solves problem
     Analysis AnalysisLoc(&cmesh);
     AnalysisLoc.RunSimulation();
     
+    // Post-porcessing: comparison to exact result
     PostProcessTemplate<Poisson> postprocess;
     postprocess.SetExact(exact);
     
     VecDouble errvec;
     errvec = AnalysisLoc.PostProcessError(std::cout, postprocess);
-    
-    
+        
     return 0;
 }
 void exact(const VecDouble &point,VecDouble &val, MatrixDouble &deriv){
