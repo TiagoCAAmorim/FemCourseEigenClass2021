@@ -65,6 +65,10 @@ void Analysis::RunSimulation() {
 
     assemb.Compute(K, F);
     std::cout << "Assemble done!" << std::endl;
+    std::cout << "Stiffness Matrix:" << std::endl;
+    std::cout << K << std::endl;
+    std::cout << "Force Vector:" << std::endl;
+    std::cout << F << std::endl;
 
     GlobalSystem = K;
     RightHandSide = F;

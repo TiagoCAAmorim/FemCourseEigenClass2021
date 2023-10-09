@@ -56,10 +56,17 @@ int main ()
     Poisson *mat1 = new Poisson(1,perm);
     mat1->SetDimension(1); // This mathstatement will be applied to 1D elements
     
+
     // Lambda function to define right-side of differential equation
     auto force = [](const VecDouble &x, VecDouble &res)
     {
-        res[0] = 1.; // Poisson: -u'' = 1; 'Standard problem': res[0] = x[0]
+        // res[0] = 1;    // Poisson: -u'' = 1
+        // res[0] = x[0]; // 'Standard problem': -u'' = x
+        double eps = exp(-1);
+        double r = (x[0] - 8/2);
+        double r2 = r*r/eps;
+        res[0] = 2/eps * (1 - 2*r2) * exp(-r2); // 'Pulse problem': u = exp(-(x-h/2)^2/eps) - exp(-(h/2)^2/eps)
+        //std::cout << "x=" << x[0] << "  f(x)=" << res[0] << std::endl;
     };
     mat1->SetForceFunction(force);
 
