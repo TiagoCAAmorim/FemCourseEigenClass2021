@@ -29,7 +29,8 @@ int main ()
 {
     GeoMesh gmesh;
     ReadGmsh read;
-    std::string filename("quads.msh");
+    // std::string filename("quads.msh");
+    std::string filename("quadsmod.msh");
 #ifdef MACOSX
     filename = "../"+filename;
 #endif
@@ -89,6 +90,6 @@ int main ()
 
     VecDouble errvec;
     errvec = locAnalysis.PostProcessError(std::cout, postprocess);
-    
+
     return 0;
 }
