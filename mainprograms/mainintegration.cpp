@@ -84,5 +84,5 @@ void Integrate2DTri (){
         // printf("  %d. f(%.4f,%.4f) = %.5f, w = %.4f\n",ip, co[0], co[1], val, weight);
         integral += val*weight;
     }
-    std::cout << "  Correto = 1/180 (0.055555...),   Calculado = " << integral/2. << std::endl;
+    std::cout << "  Correto = 1/180 (0.0055555...),   Calculado = " << integral << std::endl;
 }
