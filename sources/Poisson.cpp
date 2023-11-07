@@ -142,7 +142,7 @@ void Poisson::PostProcessSolution(const IntPointData &data, const int var, VecDo
     MatrixDouble gradudx, flux;
     gradudx = data.axes.transpose()*data.dsoldx;
     flux = -permeability*gradudx;
-    
+
     int nstate = this->NState();
     if(nstate != 1) DebugStop();
 
@@ -161,21 +161,14 @@ void Poisson::PostProcessSolution(const IntPointData &data, const int var, VecDo
 
         case 2: //EDSol
         {
-            //+++++++++++++++++
-            // Please implement me
-            // DebugStop();
             Solout.resize(3);
             for (int i = 0; i < 3; i++) {
                 Solout[i] = gradudx(i, 0);
             }
-            //+++++++++++++++++
         }
             break;
         case 3: //EFlux
         {
-            //+++++++++++++++++
-            // Please implement me
-            // DebugStop();
             Solout.resize(3);
             for (int i = 0; i < 3; i++) {
                 Solout[i] = flux(i, 0);
@@ -185,34 +178,23 @@ void Poisson::PostProcessSolution(const IntPointData &data, const int var, VecDo
 
         case 4: //EForce
         {
-            //+++++++++++++++++
-            // Please implement me
-            // DebugStop();
             Solout.resize(nstate);
             if(forceFunction) this->forceFunction(data.x, Solout);
             else Solout.setZero();
-            //+++++++++++++++++
         }
             break;
 
         case 5: //ESolExact
         {
-            //+++++++++++++++++
-            // Please implement me
-            // DebugStop();
             Solout.resize(nstate);
             VecDouble sol(nstate);
             MatrixDouble dsol(3, nstate);
             if(SolutionExact) this->SolutionExact(data.x, Solout, dsol);
             else Solout.setZero();
-            //+++++++++++++++++
         }
             break;
         case 6: //EDSolExact
         {
-            //+++++++++++++++++
-            // Please implement me
-            // DebugStop();
             Solout.resize(3);
             VecDouble sol(nstate);
             MatrixDouble dsol(3, nstate);
@@ -222,7 +204,6 @@ void Poisson::PostProcessSolution(const IntPointData &data, const int var, VecDo
             for (int i = 0; i < 3; i++) {
                 Solout[i] = dsol(i, 0);
             }
-            //+++++++++++++++++
         }
             break;
         default:
@@ -230,7 +211,7 @@ void Poisson::PostProcessSolution(const IntPointData &data, const int var, VecDo
             std::cout << " Var index not implemented " << std::endl;
             DebugStop();
         }
-    }   
+    }
 }
 
 double Poisson::Inner(MatrixDouble &S, MatrixDouble & T) const {

@@ -6,7 +6,7 @@
 
 #include "IntRule1d.h"
 ///\cond
-#include <iostream> 
+#include <iostream>
 #include <vector>
 #include <math.h>
 #include <cmath>
@@ -28,7 +28,7 @@ void IntRule1d::SetOrder(int order) {
         DebugStop();
     }
     fOrder = order;
-    int np = order/2 +1;
+    int np = order/2 + 1;
     VecDouble co(np);
     fWeights.resize(np,1);
     gauleg(-1., 1., co, fWeights);
@@ -43,8 +43,8 @@ void IntRule1d::gauleg(const double x1, const double x2, VecDouble &co, VecDoubl
 
     double EPS = 1.0e-14;
     int m, j, i;
-    double z1, z, xm, xl, pp, p3, p2, p1;    
-    
+    double z1, z, xm, xl, pp, p3, p2, p1;
+
     m = (n + 1) / 2;
     xm = 0.5 * (x2 + x1);
     xl = 0.5 * (x2 - x1);
@@ -67,6 +67,5 @@ void IntRule1d::gauleg(const double x1, const double x2, VecDouble &co, VecDoubl
         w[i] = 2.0 * xl / ((1.0 - z * z) * pp * pp);
         w[n - 1 - i] = w[i];
     }
-    
-}
 
+}
