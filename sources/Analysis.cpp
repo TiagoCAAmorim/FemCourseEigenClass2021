@@ -64,16 +64,16 @@ void Analysis::RunSimulation() {
     F.setZero();
 
     assemb.Compute(K, F);
-    std::cout << "Assemble done!" << std::endl;
-    std::cout << "Stiffness Matrix:" << std::endl;
-    std::cout << K << std::endl;
-    std::cout << "Force Vector:" << std::endl;
-    std::cout << F << std::endl;
+    // std::cout << "Assemble done!" << std::endl;
+    // std::cout << "Stiffness Matrix:" << std::endl;
+    // std::cout << K << std::endl;
+    // std::cout << "Force Vector:" << std::endl;
+    // std::cout << F << std::endl;
 
     GlobalSystem = K;
     RightHandSide = F;
 
-    std::cout << "Computing solution..." << std::endl;
+    // std::cout << "Computing solution..." << std::endl;
 
     SparseLU<SparseMat, COLAMDOrdering<int> >   solver;
     // Compute the ordering permutation vector from the structural pattern of A
@@ -88,7 +88,7 @@ void Analysis::RunSimulation() {
     //Use the factors to solve the linear system
     Solution = solver.solve(F);
 
-    std::cout << "Solution computed!" << std::endl;
+    // std::cout << "Solution computed!" << std::endl;
 
     int solsize = Solution.rows();
     VecDouble sol(solsize);
@@ -106,7 +106,7 @@ void Analysis::PostProcessSolution(const std::string &filename, PostProcess &def
 }
 
 VecDouble Analysis::PostProcessError(std::ostream &out, PostProcess &defPostProc) const {
-    std::cout << "Computing error..." << endl;
+    // std::cout << "Computing error..." << endl;
 
     VecDouble values(10);
     VecDouble errors(10);
@@ -149,7 +149,7 @@ VecDouble Analysis::PostProcessError(std::ostream &out, PostProcess &defPostProc
         for (int ier = 0; ier < nerrors; ier++)
             out << endl << "error " << ier << "  = " << sqrt(values[ier]);
     } else {
-        out << "\n# Error #" << endl;
+        out << "# Error #" << endl;
         out << "L2-Norm (u): " << sqrt(values[0]) << endl;
         out << "L2-Norm (grad u):" << sqrt(values[1]) << endl;
         out << "H1-Norm (u): " << sqrt(values[2]) << endl;
