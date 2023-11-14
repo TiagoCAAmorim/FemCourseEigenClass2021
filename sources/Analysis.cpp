@@ -74,20 +74,25 @@ void Analysis::RunSimulation() {
     RightHandSide = F;
 
     std::cout << "Computing solution..." << std::endl;
-    
+
     SparseLU<SparseMat, COLAMDOrdering<int> >   solver;
     // Compute the ordering permutation vector from the structural pattern of A
-    solver.analyzePattern(K); 
-    // Compute the numerical factorization 
-    solver.factorize(K); 
-    //Use the factors to solve the linear system 
-    Solution = solver.solve(F); 
+    solver.analyzePattern(K);
+    // Compute the numerical factorization
+    solver.factorize(K);
+    if(solver.lastErrorMessage().size()){
+        std::cout << "\n\n=====> Solver has thrown the following error: " << std::endl;
+        std::cout << solver.lastErrorMessage() << std::endl;
+        DebugStop();
+    }
+    //Use the factors to solve the linear system
+    Solution = solver.solve(F);
 
     std::cout << "Solution computed!" << std::endl;
-    
+
     int solsize = Solution.rows();
     VecDouble sol(solsize);
-    
+
     std::cout<< "Solution coefficients:" <<endl;
     for (int i = 0; i < solsize; i++) {
         sol[i] = Solution(i, 0);
@@ -159,4 +164,3 @@ VecDouble Analysis::PostProcessError(std::ostream &out, PostProcess &defPostProc
 
     return ervec;
 }
-
