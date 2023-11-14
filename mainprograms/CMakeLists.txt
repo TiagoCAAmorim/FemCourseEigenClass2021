@@ -28,3 +28,8 @@ target_link_libraries (TestOneDProblem Eigen3::Eigen)
 add_executable(TestTwoDProblem TestTwoDProblem.cpp ${SOURCES} ${HEADERS})
 target_link_libraries (TestTwoDProblem Eigen3::Eigen)
 
+add_executable(TestThreeDProblem TestThreeDProblem.cpp ${SOURCES} ${HEADERS})
+target_link_libraries (TestThreeDProblem Eigen3::Eigen)
+
+add_executable(ExerciseTwo ExerciseTwo.cpp ${SOURCES} ${HEADERS})
+target_link_libraries (ExerciseTwo Eigen3::Eigen)
