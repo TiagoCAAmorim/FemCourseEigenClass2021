@@ -38,8 +38,8 @@ void ShapeQuad::Shape(const VecDouble &xi, VecInt &orders, VecDouble &phi, Matri
     DebugStop(xi.size() == Dimension, "ShapeQuad::Shape: Invalid xi dimension for 2D element. Expected "+std::to_string(xi.size())+", received "+std::to_string(Dimension)+".");
 
     auto nf = NShapeFunctions(orders);
-    std::cout << "ShapeQuad::NShapeFunctions, number of shape function " << nf << std::endl;
-    std::cout << "ShapeQuad::NShapeFunctions, number of elements " << orders.size() << std::endl;
+    // std::cout << "ShapeQuad::NShapeFunctions, number of shape function " << nf << std::endl;
+    // std::cout << "ShapeQuad::NShapeFunctions, number of elements " << orders.size() << std::endl;
 
     phi.resize(nf);
     dphi.resize(2, nf);

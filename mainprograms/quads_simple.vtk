@@ -1,0 +1,84 @@
+# vtk DataFile Version 3.0
+TPZGeoMesh VTK Visualization
+ASCII
+
+DATASET UNSTRUCTURED_GRID
+POINTS 8 float
+2 0 0 
+0 2 0 
+0 0 0 
+0 0 0 
+1 1 0 
+0 1 0 
+0 0 0 
+1 0 0 
+CELLS 1 9
+8 0 1 2 3 4 5 6 7
+
+CELL_TYPES 1
+23
+
+CELL_DATA 1
+FIELD FieldData 2
+material 1 1 int
+1
+elindex 1 1 int
+5
+POINT_DATA 8
+SCALARS Sol float
+LOOKUP_TABLE default
+-7.27273e-14 
+-2.36364e-13 
+2.18182e-13 
+1.63636e-13 
+-1.54545e-13 
+-9.09091e-15 
+1.90909e-13 
+4.54545e-14 
+SCALARS Force float
+LOOKUP_TABLE default
+-4 
+-4 
+0 
+0 
+0 
+0 
+0 
+0 
+SCALARS SolExact float
+LOOKUP_TABLE default
+-0 
+-0 
+0 
+0 
+0 
+0 
+0 
+0 
+VECTORS DSol float
+-1.18182e-13 -2e-13 0 
+-1.45455e-13 -2.27273e-13 0 
+nan nan 0 
+nan nan 0 
+-1.31818e-13 -2.13636e-13 0 
+-1.72727e-13 -2.27273e-13 0 
+nan nan 0 
+-1.18182e-13 -1.72727e-13 0 
+VECTORS Flux float
+1.18182e-13 2e-13 0 
+1.45455e-13 2.27273e-13 0 
+nan nan 0 
+nan nan 0 
+1.31818e-13 2.13636e-13 0 
+1.72727e-13 2.27273e-13 0 
+nan nan 0 
+1.18182e-13 1.72727e-13 0 
+VECTORS DSolExact float
+-0 -2 0 
+-2 -0 0 
+0 0 0 
+0 0 0 
+-0 -0 0 
+0 -0 0 
+0 0 0 
+-0 0 0 

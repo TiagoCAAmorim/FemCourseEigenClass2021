@@ -62,7 +62,7 @@ void GeomQuad::X(const VecDouble &xi, MatrixDouble &NodeCo, VecDouble &x) {
 
 void GeomQuad::GradX(const VecDouble &xi, MatrixDouble &NodeCo, VecDouble &x, MatrixDouble &gradx) {
     if(xi.size() != Dimension) DebugStop();
-    if(x.size() != NodeCo.rows()) DebugStop();
+    if(x.size() < NodeCo.rows()) DebugStop();  /// Duvida: por que NodeCo pode ter mais linhas que Dimensao do problema?
     if(NodeCo.cols() != nCorners) DebugStop();
 
     int64_t nrow = NodeCo.rows();

@@ -49,7 +49,7 @@ void Assemble::Compute(SparseMat &globmat, MatrixDouble &rhs) {
 
     auto neq = NEquations();
 
-    globmat.resize(neq, neq);
+    globmat.resize(neq, neq); // Duvida: nao
     globmat.setZero();
     rhs.resize(neq, 1);
     rhs.setZero();
@@ -66,9 +66,9 @@ void Assemble::Compute(SparseMat &globmat, MatrixDouble &rhs) {
         ek.setZero();
         ef.setZero();
 
+        std::cout << "    Element #" << (el+1) << ": " << nshape << " shape function(s)." << std::endl;
         cel->CalcStiff(ek, ef);
 
-        // Creates destiny indices
         VecInt destIndex(neqs);
         int count = 0;
         destIndex.setZero();
@@ -82,7 +82,6 @@ void Assemble::Compute(SparseMat &globmat, MatrixDouble &rhs) {
             }
         }
 
-        // Assemble global matrix and vector
         for (int i=0; i<neqs; i++){
             int64_t dest_i = destIndex[i];
             rhs(dest_i,0) += ef(i,0);

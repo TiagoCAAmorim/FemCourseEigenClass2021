@@ -30,7 +30,7 @@ int main ()
     GeoMesh gmesh;
     ReadGmsh read;
     // std::string filename("quads.msh");
-    std::string filename("D:/FemCourseEigenClass2021/mainprograms/quads_simple.msh");
+    std::string filename("D:/FemCourseEigenClass2021/mainprograms/quadsmod.msh");
 #ifdef MACOSX
     filename = "../"+filename;
 #endif
@@ -86,7 +86,7 @@ int main ()
     postprocess.AppendVariable("DSolExact");
     postprocess.SetExact(exact);
     mat1->SetExactSolution(exact);
-    locAnalysis.PostProcessSolution("D:/FemCourseEigenClass2021/mainprograms/quads_simple.vtk", postprocess);
+    locAnalysis.PostProcessSolution("D:/FemCourseEigenClass2021/mainprograms/quadsmod.vtk", postprocess);
     // locAnalysis.PostProcessSolution("quads.vtk", postprocess);
 
     VecDouble errvec;

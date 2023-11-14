@@ -57,7 +57,7 @@ void Analysis::RunSimulation() {
     Assemble assemb(cmesh);
 
     int ne = assemb.NEquations();
-    SparseMat K(ne, ne);
+    SparseMat K(ne, ne);  // Duvida: nao precisa fazer isso porque tem resize dentro de Compute
     MatrixDouble F(ne, 1);
 
     K.setZero();

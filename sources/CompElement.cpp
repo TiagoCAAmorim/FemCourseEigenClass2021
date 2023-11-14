@@ -9,7 +9,7 @@
 #include "MathStatement.h"
 #include "CompMesh.h"
 ///\cond
-#include <math.h> 
+#include <math.h>
 ///\endcond
 using namespace std;
 
@@ -108,7 +108,7 @@ void CompElement::InitializeIntPointData(IntPointData &data) const {
 }
 
 void CompElement::ComputeRequiredData(IntPointData &data, VecDouble &intpoint) const {
-    
+
     data.ksi = intpoint;
 
     int dim = this->Dimension();
@@ -188,6 +188,8 @@ void CompElement::CalcStiff(MatrixDouble &ek, MatrixDouble &ef) const {
     this->InitializeIntPointData(data);
     int nintpoints = intrule->NPoints();
 
+    // std::cout << "         integration - order: " << maxIntOrder << ", dimension: " << dim << ", #points: " << nintpoints << std::endl;
+
     for (int nint = 0; nint < nintpoints; nint++){
         intrule->Point(nint, data.ksi, weight);
         this->ComputeRequiredData(data, data.ksi);
@@ -259,6 +261,6 @@ void CompElement::Solution(VecDouble &intpoint, int var, VecDouble &sol) const {
     this->ComputeRequiredData(data, intpoint);
     this->GetMultiplyingCoeficients(data.coefs);
     data.ComputeSolution();
-    
+
     material->PostProcessSolution(data, var, sol);
 }
