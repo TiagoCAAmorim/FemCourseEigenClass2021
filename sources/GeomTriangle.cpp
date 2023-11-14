@@ -24,25 +24,63 @@ GeomTriangle& GeomTriangle::operator=(const GeomTriangle& copy) {
 }
 
 void GeomTriangle::Shape(const VecDouble& xi, VecDouble& phi, MatrixDouble& dphi) {
-    std::cout << "\nPLEASE IMPLEMENT ME\n" << __PRETTY_FUNCTION__ << std::endl;
     if(xi.size() != Dimension || phi.size() != nCorners || dphi.rows() != Dimension || dphi.cols() != nCorners) DebugStop();
-    DebugStop();
+
+    phi[0] = 1.0 - xi[0] - xi[1];
+    dphi(0, 0) = -1.0;
+    dphi(1, 0) = -1.0;
+
+    phi[1] = xi[0];
+    dphi(0, 1) = 1.0;
+    dphi(1, 1) = 0.0;
+
+    phi[2] = xi[1];
+    dphi(0, 2) = 0.0;
+    dphi(1, 2) = 1.0;
 }
 
 void GeomTriangle::X(const VecDouble &xi, MatrixDouble &NodeCo, VecDouble &x) {
-    std::cout << "\nPLEASE IMPLEMENT ME\n" << __PRETTY_FUNCTION__ << std::endl;
     if(xi.size() != Dimension) DebugStop();
-    if(x.size() != NodeCo.rows()) DebugStop();
+    if(x.size() < NodeCo.rows()) DebugStop();
     if(NodeCo.cols() != nCorners) DebugStop();
-    DebugStop();
+
+    VecDouble phi(nCorners);
+    MatrixDouble dphi(Dimension, nCorners);
+
+    Shape(xi, phi, dphi);
+    int space = NodeCo.rows();
+    x.setZero();
+
+    for (int i = 0; i < space; i++) {
+        for (int j = 0; j < nCorners; j++){
+            x[i] += NodeCo(i,j)*phi[j];
+        }
+    }
 }
 
 void GeomTriangle::GradX(const VecDouble &xi, MatrixDouble &NodeCo, VecDouble &x, MatrixDouble &gradx) {
-    std::cout << "\nPLEASE IMPLEMENT ME\n" << __PRETTY_FUNCTION__ << std::endl;
     if(xi.size() != Dimension) DebugStop();
-    if(x.size() != NodeCo.rows()) DebugStop();
+    if(x.size() < NodeCo.rows()) DebugStop();  /// Duvida: por que NodeCo pode ter mais linhas que Dimensao do problema?
     if(NodeCo.cols() != nCorners) DebugStop();
-    DebugStop();
+
+    VecDouble phi(nCorners);
+    MatrixDouble dphi(Dimension, nCorners);
+
+    Shape(xi, phi, dphi);
+    int space = NodeCo.rows();
+
+    x.setZero();
+    gradx.resize(space, Dimension);
+    gradx.setZero();
+
+    for (int i = 0; i < space; i++) {
+        for (int j = 0; j < nCorners; j++) {
+            x[i] += NodeCo(i,j) * phi[j];
+            for (int k = 0; k < Dimension; k++){
+                gradx(i, k) += NodeCo(i,j) * dphi(k, j);
+            }
+        }
+    }
 }
 
 void GeomTriangle::SetNodes(const VecInt &nodes) {

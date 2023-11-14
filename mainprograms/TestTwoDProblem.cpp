@@ -72,12 +72,6 @@ int main ()
         deriv(1,0) = (1-2.*x[1])*(1-x[0])*x[0];
     };
 
-//    if (!strcmp("Sol", name.c_str())) return ESol;
-//    if (!strcmp("DSol", name.c_str())) return EDSol;
-//    if (!strcmp("Flux", name.c_str())) return EFlux;
-//    if (!strcmp("Force", name.c_str())) return EForce;
-//    if (!strcmp("SolExact", name.c_str())) return ESolExact;
-//    if (!strcmp("DSolExact", name.c_str())) return EDSolExact;
     postprocess.AppendVariable("Sol");
     postprocess.AppendVariable("DSol");
     postprocess.AppendVariable("Flux");

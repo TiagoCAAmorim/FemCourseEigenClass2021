@@ -44,18 +44,16 @@ void GeomQuad::X(const VecDouble &xi, MatrixDouble &NodeCo, VecDouble &x) {
     if(x.size() < NodeCo.rows()) DebugStop();
     if(NodeCo.cols() != nCorners) DebugStop();
 
-    int64_t nrow = NodeCo.rows();
-    if (x.size() < nrow) x.resize(nrow);
-    x.setZero();
-
     VecDouble phi(nCorners);
     MatrixDouble dphi(Dimension, nCorners);
-    Shape(xi, phi, dphi);
 
-    for (int i = 0; i < nrow; i++) {
-        x[i] = 0;
-        for (int j = 0; j < 4; j++){
-            x[i] += NodeCo(i,j)*phi[i];
+    Shape(xi, phi, dphi);
+    int space = NodeCo.rows();
+    x.setZero();
+
+    for (int i = 0; i < space; i++) {
+        for (int j = 0; j < nCorners; j++){
+            x[i] += NodeCo(i,j)*phi[j];
         }
     }
 }
@@ -65,21 +63,21 @@ void GeomQuad::GradX(const VecDouble &xi, MatrixDouble &NodeCo, VecDouble &x, Ma
     if(x.size() < NodeCo.rows()) DebugStop();  /// Duvida: por que NodeCo pode ter mais linhas que Dimensao do problema?
     if(NodeCo.cols() != nCorners) DebugStop();
 
-    int64_t nrow = NodeCo.rows();
-    gradx.resize(nrow, 2);
-    gradx.setZero();
-
-    X(xi, NodeCo, x);
-
     VecDouble phi(nCorners);
     MatrixDouble dphi(Dimension, nCorners);
-    Shape(xi, phi, dphi);
 
-    for (int i = 0; i < nrow; i++) {
-        for (int k = 0; k<2; k++){
-            gradx(i, k) = 0;
-            for (int j = 0; j < 4; j++){
-                gradx(i, k)  += NodeCo(i,j)*dphi(k,i);
+    Shape(xi, phi, dphi);
+    int space = NodeCo.rows();
+
+    x.setZero();
+    gradx.resize(space, Dimension);
+    gradx.setZero();
+
+    for (int i = 0; i < space; i++) {
+        for (int j = 0; j < nCorners; j++) {
+            x[i] += NodeCo(i,j) * phi[j];
+            for (int k = 0; k < Dimension; k++){
+                gradx(i, k) += NodeCo(i,j) * dphi(k, j);
             }
         }
     }
