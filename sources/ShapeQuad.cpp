@@ -22,7 +22,7 @@ void ShapeQuad::Shape(const VecDouble &xi, VecInt &orders, VecDouble &phi, Matri
             DebugStop();
         }
     }
-    if (orders[0] > 1 || orders[1] > 1 || orders[2] > 1 || orders[3] > 1) {
+        if (orders[0] > 1 || orders[1] > 1 || orders[2] > 1 || orders[3] > 1) {
         std::cout << "ShapeQuad::Shape: Invalid dimension for arguments (order > 1) in sides 0,1,2 or 3.\n";
         DebugStop();
     }
@@ -65,31 +65,31 @@ void ShapeQuad::Shape(const VecDouble &xi, VecInt &orders, VecDouble &phi, Matri
     int nfi= 4;
 
     if (orders.size() > 4){
-        if (NShapeFunctions(4, orders[4]) > 1){
+        if (NShapeFunctions(4, orders[4]) > 0){
             phi[nfi] = (1. - xi[0]*xi[0])*(1. - xi[1]) / 2.;
             dphi(0, nfi) = -xi[0] * (1. - xi[1]);
             dphi(1, nfi) = -(1. - xi[0]*xi[0]) / 2.;
             nfi++;
         };
-        if (NShapeFunctions(5, orders[5]) > 1){
+        if (NShapeFunctions(5, orders[5]) > 0){
             phi[nfi] = (1. - xi[1]*xi[1])*(1. + xi[0]) / 2.;
             dphi(0, nfi) = (1. - xi[1]*xi[1]) / 2.;
             dphi(1, nfi) = -xi[1] * (1. + xi[0]);
             nfi++;
         };
-        if (NShapeFunctions(6, orders[6]) > 1){
+        if (NShapeFunctions(6, orders[6]) > 0){
             phi[nfi] = (1. - xi[0]*xi[0])*(1. + xi[1]) / 2.;
             dphi(0, nfi) = -xi[0] * (1. + xi[1]);
             dphi(1, nfi) = (1. - xi[0]*xi[0]) / 2.;
             nfi++;
         };
-        if (NShapeFunctions(7, orders[7]) > 1){
+        if (NShapeFunctions(7, orders[7]) > 0){
             phi[nfi] = (1. - xi[1]*xi[1])*(1. - xi[0]) / 2.;
             dphi(0, nfi) = -(1. - xi[1]*xi[1]) / 2.;
             dphi(1, nfi) = -xi[1] * (1. - xi[0]);
             nfi++;
         };
-        if (NShapeFunctions(8, orders[8]) > 1){
+        if (NShapeFunctions(8, orders[8]) > 0){
             phi[nfi] = (1. - xi[0]*xi[0])*(1. - xi[1]*xi[1]);
             dphi(0, nfi) = -2*xi[0] * (1. - xi[1]*xi[1]);
             dphi(1, nfi) = -2*xi[1] * (1. - xi[0]*xi[0]);
@@ -97,10 +97,7 @@ void ShapeQuad::Shape(const VecDouble &xi, VecInt &orders, VecDouble &phi, Matri
         };
     }
 
-    DebugStop(nf == nfi, "ShapeQuad::Shape: Number of shape functions does not match! Check code.");
-
-    // std::cout << "Please implement me\n";
-    // DebugStop();
+    DebugStop(nf == nfi, "ShapeQuad::Shape: Number of shape functions does not match! Expected "+std::to_string(nf)+", got "+std::to_string(nfi)+" Check code.");
 }
 
 /// returns the number of shape functions associated with a side

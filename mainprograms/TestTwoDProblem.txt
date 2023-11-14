@@ -1,0 +1,39 @@
+Multiple Quad, Lin
+L2-Norm (u): 0.000908316
+L2-Norm (grad u):0.0230905
+H1-Norm (u): 0.0231084
+
+Multiple Quad, Quad
+L2-Norm (u): 1.11413e-05
+L2-Norm (grad u):0.000774241
+H1-Norm (u): 0.000774321
+
+Single Quad, Lin
+L2-Norm (u): 0.0333333
+L2-Norm (grad u):0.149071
+H1-Norm (u): 0.152753
+
+Single Quad, Quad
+L2-Norm (u): 1.97285e-13
+L2-Norm (grad u):3.33328e-13
+H1-Norm (u): 3.87336e-13
+
+Multiple Triangles, Lin
+L2-Norm (u): 0.000747679
+L2-Norm (grad u):0.0214564
+H1-Norm (u): 0.0214694
+
+Multiple Triangles, Quad
+L2-Norm (u): 1.47178e-05
+L2-Norm (grad u):0.00114199
+H1-Norm (u): 0.00114208
+
+Four Triangles, Lin
+L2-Norm (u): 0.00721621
+L2-Norm (grad u):0.0665248
+H1-Norm (u): 0.066915
+
+Four Triangles, Quad
+L2-Norm (u): 0.00583736
+L2-Norm (grad u):0.056352
+H1-Norm (u): 0.0566535
