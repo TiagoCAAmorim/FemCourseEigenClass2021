@@ -143,6 +143,41 @@ int main(){
     };
     mutipletests("xy", force4, exact4);
 
+    auto exact5 = [](const VecDouble &x, VecDouble &val, MatrixDouble &deriv)
+    {
+        val[0] = x[0]*x[0];
+        deriv(0,0) = 2*x[0];
+        deriv(1,0) = 0.;
+    };
+    auto force5 = [](const VecDouble &x, VecDouble &res)
+    {
+        res[0] = -2;
+    };
+    mutipletests("x2", force5, exact5);
+
+    auto exact6 = [](const VecDouble &x, VecDouble &val, MatrixDouble &deriv)
+    {
+        val[0] = x[1]*x[1];
+        deriv(0,0) = 0.;
+        deriv(1,0) = 2*x[1];
+    };
+    auto force6 = [](const VecDouble &x, VecDouble &res)
+    {
+        res[0] = -2;
+    };
+    mutipletests("y2", force6, exact6);
+
+    auto exact7 = [](const VecDouble &x, VecDouble &val, MatrixDouble &deriv)
+    {
+        val[0] = x[0]*x[0]*x[1]*x[1];
+        deriv(0,0) = 2*x[0]*x[1]*x[1];
+        deriv(1,0) = 2*x[0]*x[0]*x[1];
+    };
+    auto force7 = [](const VecDouble &x, VecDouble &res)
+    {
+        res[0] = -2*x[0]*x[0]-2*x[1]*x[1];
+    };
+    mutipletests("x2y2", force7, exact7);
 
     return 0;
 }
