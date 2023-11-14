@@ -30,7 +30,7 @@ int main ()
     GeoMesh gmesh;
     ReadGmsh read;
     // std::string filename("quads.msh");
-    std::string filename("quadsmod.msh");
+    std::string filename("D:/FemCourseEigenClass2021/mainprograms/quads_simple.msh");
 #ifdef MACOSX
     filename = "../"+filename;
 #endif
@@ -59,10 +59,10 @@ int main ()
     std::vector<MathStatement *> mathvec = {0,mat1,bc_point,bc_linha};
     cmesh.SetMathVec(mathvec);
     cmesh.SetDefaultOrder(1);
-    cmesh.AutoBuild();
-    cmesh.Resequence();
+    cmesh.AutoBuild();  // Monta os DOFs e as equacoes associadas.
+    cmesh.Resequence();  //Duvida: ta' fazendo resequence duas vezes. Ja' tem dentro de AutoBuild.
 
-        Analysis locAnalysis(&cmesh);
+    Analysis locAnalysis(&cmesh);
     locAnalysis.RunSimulation();
     PostProcessTemplate<Poisson> postprocess;
     auto exact = [](const VecDouble &x, VecDouble &val, MatrixDouble &deriv)
@@ -86,7 +86,8 @@ int main ()
     postprocess.AppendVariable("DSolExact");
     postprocess.SetExact(exact);
     mat1->SetExactSolution(exact);
-    locAnalysis.PostProcessSolution("quads.vtk", postprocess);
+    locAnalysis.PostProcessSolution("D:/FemCourseEigenClass2021/mainprograms/quads_simple.vtk", postprocess);
+    // locAnalysis.PostProcessSolution("quads.vtk", postprocess);
 
     VecDouble errvec;
     errvec = locAnalysis.PostProcessError(std::cout, postprocess);

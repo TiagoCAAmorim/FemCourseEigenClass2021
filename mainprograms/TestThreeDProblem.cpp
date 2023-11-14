@@ -31,7 +31,7 @@ int main ()
 {
     GeoMesh gmesh;
     ReadGmsh read;
-    std::string filename("cube3D.msh");
+    std::string filename("D:/FemCourseEigenClass2021/mainprograms/cube3D.msh");
 #ifdef MACOSX
     filename = "../"+filename;
 #endif
@@ -45,7 +45,7 @@ int main ()
     perm(2,2) = 1.;
     Poisson *mat1 = new Poisson(1,perm);
     mat1->SetDimension(3);
-    
+
     auto force = [](const VecDouble &x, VecDouble &res)
     {
         double ax,ay,az;
@@ -67,8 +67,8 @@ int main ()
     cmesh.AutoBuild();
     cmesh.Resequence();
 
-    
-    
+
+
     Analysis locAnalysis(&cmesh);
     locAnalysis.RunSimulation();
     PostProcessTemplate<Poisson> postprocess;
@@ -98,13 +98,11 @@ int main ()
     postprocess.AppendVariable("DSolExact");
     postprocess.SetExact(exact);
     mat1->SetExactSolution(exact);
-    locAnalysis.PostProcessSolution("cube3D.vtk", postprocess);
+    locAnalysis.PostProcessSolution("D:/FemCourseEigenClass2021/mainprograms/cube3D.vtk", postprocess);
 
     VecDouble errvec;
     errvec = locAnalysis.PostProcessError(std::cout, postprocess);
-    
-    
+
+
     return 0;
 }
-
-

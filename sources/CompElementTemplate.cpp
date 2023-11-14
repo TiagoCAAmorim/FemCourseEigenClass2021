@@ -26,11 +26,11 @@ template<class Shape>
 CompElementTemplate<Shape>::CompElementTemplate(int64_t ind, CompMesh *cmesh, GeoElement *geo) : CompElement(ind, cmesh, geo) {
     int64_t nel = 0;
     nel = cmesh->GetElementVec().size();
-    cmesh->SetNumberElement(nel);
+    cmesh->SetNumberElement(nel);  //Duvida: para que precisa ficar redefinindo numero de elementos? Acabou de pegar acima!?!
     cmesh->SetElement(ind, this);
     if(this->Dimension()==0)
         intrule.SetOrder(0);
-    else    
+    else
         intrule.SetOrder(2 * cmesh->GetDefaultOrder());
     this->SetIntRule(&intrule);
     this->SetIndex(ind);
@@ -47,7 +47,7 @@ CompElementTemplate<Shape>::CompElementTemplate(int64_t ind, CompMesh *cmesh, Ge
     for (int i = 0; i < nsides; i++) {
         GeoElementSide gelside(this->GetGeoElement(), i);
         GeoElementSide neighbour = gelside.Neighbour();
-        this->SetNDOF(nsides);
+        this->SetNDOF(nsides); // Se NDOF e' nsides, como entra com ordem superior a 2? Essa linha dava para colocar antes do for
 
         if (gelside != neighbour && neighbour.Element()->GetIndex() < ind) {
             CompElement *cel = neighbour.Element()->GetReference();
@@ -61,7 +61,7 @@ CompElementTemplate<Shape>::CompElementTemplate(int64_t ind, CompMesh *cmesh, Ge
             int nstate = mat->NState();
             dof.SetNShapeStateOrder(nshape, nstate, order);
 
-            if(nstate != 1) DebugStop();
+            if(nstate != 1) DebugStop();  //Duvida: para que serve nstate se e' sempre 1???
             int64_t ndof = cmesh->GetNumberDOF();
             ndof++;
             cmesh->SetNumberDOF(ndof);
@@ -182,7 +182,7 @@ int CompElementTemplate<Shape>::NShapeFunctions(int doflocindex) const {
 template<class Shape>
 int CompElementTemplate<Shape>::ComputeNShapeFunctions(int doflocindex, int order) {
     dofindexes.resize(doflocindex + 1);
-    dofindexes[doflocindex] = doflocindex;
+    dofindexes[doflocindex] = doflocindex;  //Duvida: para que montar um vetor com V[i]=i???
     return Shape::NShapeFunctions(doflocindex, order);
 
 }
@@ -225,7 +225,7 @@ CompElement *CreateCompEl(GeoElement *gel, CompMesh *mesh, int64_t index) {
         default:
             DebugStop();
     }
- 
+
     // Code should not reach this point. This return is only here to stop compiler warnings.
     DebugStop();
     return NULL;

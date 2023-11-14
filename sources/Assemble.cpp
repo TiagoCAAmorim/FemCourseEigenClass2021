@@ -42,18 +42,18 @@ int64_t Assemble::NEquations() {
     return neq;
 }
 
-void Assemble::OptimizeBandwidth() {    
+void Assemble::OptimizeBandwidth() {
 }
 
 void Assemble::Compute(SparseMat &globmat, MatrixDouble &rhs) {
-    
+
     auto neq = NEquations();
-    
+
     globmat.resize(neq, neq);
     globmat.setZero();
     rhs.resize(neq, 1);
     rhs.setZero();
-    
+
     int64_t nelem = cmesh->GetGeoMesh()->NumElements();
     for (int el = 0; el < nelem; el++) {
         CompElement *cel = cmesh->GetElement(el);
@@ -67,7 +67,7 @@ void Assemble::Compute(SparseMat &globmat, MatrixDouble &rhs) {
         ef.setZero();
 
         cel->CalcStiff(ek, ef);
-        
+
         // Creates destiny indices
         VecInt destIndex(neqs);
         int count = 0;
@@ -82,16 +82,16 @@ void Assemble::Compute(SparseMat &globmat, MatrixDouble &rhs) {
             }
         }
 
-        // Assemble blobal matrix and vector
+        // Assemble global matrix and vector
         for (int i=0; i<neqs; i++){
             int64_t dest_i = destIndex[i];
             rhs(dest_i,0) += ef(i,0);
             for (int j=0; j<neqs; j++){
                 int64_t dest_j = destIndex[j];
-                globmat.coeffRef(dest_i,dest_j) += ek(i,j);         
+                globmat.coeffRef(dest_i,dest_j) += ek(i,j);
             }
         }
-        
-        
+
+
     }
 }
