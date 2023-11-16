@@ -78,8 +78,23 @@ void test2D(std::string filename, std::string functionname, const std::function<
 
 void mutipletests(std::string functionname, const std::function<void(const VecDouble &co, VecDouble &result)> &force, const std::function<void(const VecDouble &loc, VecDouble &result, MatrixDouble &deriv)> &exact){
     std::string foldername = "D:/FemCourseEigenClass2021/ex02/";
-    // std::vector<std::string> filenames = {"Mesh1Quad", "Mesh4Quad", "Mesh2Tri", "Mesh8Tri"};
-    std::vector<std::string> filenames = {"Mesh1Quad", "Mesh2Tri"};
+    std::vector<std::string> filenames = {"Mesh1Quad", "Mesh4Quad", "Mesh2Tri", "Mesh8Tri"};
+    int max_order = 2; // (1 or 2)
+
+    for (int i=0; i<filenames.size(); i++){
+        for (int j=0; j<max_order; j++){
+            std::cout << "" << std::endl;
+            std::cout << "##### " << filenames[i] << " #####" << std::endl;
+            std::cout << "#####   exact function: " << functionname << " #####" << std::endl;
+            std::cout << "#####   order: " << (j+1) << " #####" << std::endl;
+            test2D(foldername+filenames[i], functionname, force, exact, j+1);
+        }
+    }
+}
+
+void mutipletests2(std::string functionname, const std::function<void(const VecDouble &co, VecDouble &result)> &force, const std::function<void(const VecDouble &loc, VecDouble &result, MatrixDouble &deriv)> &exact){
+    std::string foldername = "D:/FemCourseEigenClass2021/ex02/";
+    std::vector<std::string> filenames = {"Mesh16Quad", "Mesh64Quad", "Mesh256Quad", "Mesh32Tri", "Mesh128Tri", "Mesh512Tri"};
     int max_order = 1; // (1 or 2)
 
     for (int i=0; i<filenames.size(); i++){
@@ -95,6 +110,8 @@ void mutipletests(std::string functionname, const std::function<void(const VecDo
 
 
 int main(){
+    SetDebug(false);
+
     auto exact1 = [](const VecDouble &x, VecDouble &val, MatrixDouble &deriv)
     {
         val[0] = 1;
@@ -178,6 +195,7 @@ int main(){
         res[0] = -2*x[0]*x[0]-2*x[1]*x[1];
     };
     mutipletests("x2y2", force7, exact7);
+    // mutipletests2("x2y2", force7, exact7);
 
     return 0;
 }
