@@ -195,7 +195,7 @@ int main(){
         res[0] = -2*x[0]*x[0]-2*x[1]*x[1];
     };
     mutipletests("x2y2", force7, exact7);
-    // mutipletests2("x2y2", force7, exact7);
+    mutipletests2("x2y2", force7, exact7);
 
     return 0;
 }
