@@ -8,3 +8,4 @@
 #include "tpanic.h"
 
 bool PanicMessage = true;
+bool debug_bool = false;

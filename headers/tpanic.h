@@ -24,6 +24,7 @@
 #endif
 
 extern bool PanicMessage;
+extern bool debug_bool;
 
 static void DebugStop(){
     if(PanicMessage)    {
@@ -46,6 +47,16 @@ static void DebugStop(std::string fail_message){
 static void DebugStop(bool not_fail_condition, std::string fail_message){
     if(!not_fail_condition){
         DebugStop(fail_message);
+    }
+}
+
+static bool IsDebug(){
+    return false;
+}
+
+static void DebugLog(std::string message){
+    if (IsDebug()){
+        std::cout << message << std::endl << std::flush;
     }
 }
 

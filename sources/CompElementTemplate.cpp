@@ -209,18 +209,23 @@ CompElement *CreateCompEl(GeoElement *gel, CompMesh *mesh, int64_t index) {
 
     switch (gel->Type()) {
         case EPoint:
+            DebugLog("    => point element.");
             return new CompElementTemplate<Shape0d> (index, mesh, gel);
             break;
         case EOned:
+            DebugLog("    => line element.");
             return new CompElementTemplate<Shape1d> (index, mesh, gel);
             break;
         case EQuadrilateral:
+            DebugLog("    => quadrilateral element.");
             return new CompElementTemplate<ShapeQuad> (index, mesh, gel);
             break;
         case ETriangle:
+            DebugLog("    => triangle element.");
             return new CompElementTemplate<ShapeTriangle> (index, mesh, gel);
             break;
         case ETetraedro:
+            DebugLog("    => tetrahedron element.");
             return new CompElementTemplate<ShapeTetrahedron> (index, mesh, gel);
         default:
             DebugStop();
