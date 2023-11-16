@@ -50,8 +50,12 @@ static void DebugStop(bool not_fail_condition, std::string fail_message){
     }
 }
 
+static void SetDebug(bool value){
+    debug_bool = value;
+}
+
 static bool IsDebug(){
-    return false;
+    return debug_bool;
 }
 
 static void DebugLog(std::string message){

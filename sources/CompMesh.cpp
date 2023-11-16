@@ -118,28 +118,24 @@ void CompMesh::AutoBuild() {
     int64_t nelem = this->GetElementVec().size();
 
     for (i = 0; i < nelem; i++) {
-        DebugLog("Element #"+std::to_string(i+1));
         GeoElement *gel = this->GetGeoMesh()->Element(i);
 
-        std::string msg = "  Corners:";
         VecInt nodes;
         gel->GetNodes(nodes);
-        for (int j=0; j<gel->NNodes(); j++){
-            msg = msg + " " + std::to_string(nodes[j]);
-        }
-        DebugLog(msg);
-
         if(!gel)
         {
             std::cout << "Null pointer as geometric element\n";
             DebugStop();
         }
         CompElement *cel = CreateCompEl(gel, this, i);
-        if (IsDebug())
-            cel->Print(std::cout);
         this->SetElement(i, cel);
     }
     this->Resequence();
+
+    if (IsDebug()){
+        geomesh->Print(std::cout);
+        this->Print(std::cout);
+    }
 }
 
 void CompMesh::Resequence() {
@@ -218,8 +214,10 @@ void CompMesh::Print(std::ostream & out) {
         MathStatement *mat = this->GetMath(i);
         out << "Material index: " << i << std::endl;
         if (!mat) {
-            DebugStop();
+            std::cout << "Missing material information." << std::endl << std::endl;
+            // DebugStop("Missing material information.");
+        } else{
+            mat->Print(out);
         }
-        mat->Print(out);
     }
 }
