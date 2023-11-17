@@ -94,7 +94,7 @@ void mutipletests(std::string functionname, const std::function<void(const VecDo
 
 void mutipletests2(std::string functionname, const std::function<void(const VecDouble &co, VecDouble &result)> &force, const std::function<void(const VecDouble &loc, VecDouble &result, MatrixDouble &deriv)> &exact){
     std::string foldername = "D:/FemCourseEigenClass2021/ex02/";
-    std::vector<std::string> filenames = {"Mesh16Quad", "Mesh64Quad", "Mesh256Quad", "Mesh32Tri", "Mesh128Tri", "Mesh512Tri"};
+    std::vector<std::string> filenames = {"Mesh1Quad", "Mesh4Quad", "Mesh16Quad", "Mesh64Quad", "Mesh256Quad", "Mesh2Tri", "Mesh8Tri", "Mesh32Tri", "Mesh128Tri", "Mesh512Tri"};
     int max_order = 1; // (1 or 2)
 
     for (int i=0; i<filenames.size(); i++){
