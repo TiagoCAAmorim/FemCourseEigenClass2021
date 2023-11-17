@@ -1,0 +1,81 @@
+##### Mesh1Quad #####
+#####   exact function: x2y2 #####
+#####   order: 1 #####
+# Error #
+L2-Norm (u): 0.0746132
+L2-Norm (grad u):0.384599
+H1-Norm (u): 0.39177
+
+##### Mesh4Quad #####
+#####   exact function: x2y2 #####
+#####   order: 1 #####
+# Error #
+L2-Norm (u): 0.0179901
+L2-Norm (grad u):0.188553
+H1-Norm (u): 0.189409
+
+##### Mesh16Quad #####
+#####   exact function: x2y2 #####
+#####   order: 1 #####
+# Error #
+L2-Norm (u): 0.00460155
+L2-Norm (grad u):0.0924393
+H1-Norm (u): 0.0925537
+
+##### Mesh64Quad #####
+#####   exact function: x2y2 #####
+#####   order: 1 #####
+# Error #
+L2-Norm (u): 0.00115223
+L2-Norm (grad u):0.0458439
+H1-Norm (u): 0.0458584
+
+##### Mesh256Quad #####
+#####   exact function: x2y2 #####
+#####   order: 1 #####
+# Error #
+L2-Norm (u): 0.000287899
+L2-Norm (grad u):0.0228544
+H1-Norm (u): 0.0228562
+
+
+
+##### Mesh2Tri #####
+#####   exact function: x2y2 #####
+#####   order: 1 #####
+# Error #
+L2-Norm (u): 0.169472
+L2-Norm (grad u):0.824951
+H1-Norm (u): 0.842179
+
+##### Mesh8Tri #####
+#####   exact function: x2y2 #####
+#####   order: 1 #####
+# Error #
+L2-Norm (u): 0.0455098
+L2-Norm (grad u):0.506654
+H1-Norm (u): 0.508693
+
+##### Mesh32Tri #####
+#####   exact function: x2y2 #####
+#####   order: 1 #####
+# Error #
+L2-Norm (u): 0.0112881
+L2-Norm (grad u):0.256354
+H1-Norm (u): 0.256602
+
+##### Mesh128Tri #####
+#####   exact function: x2y2 #####
+#####   order: 1 #####
+# Error #
+L2-Norm (u): 0.0028023
+L2-Norm (grad u):0.128565
+H1-Norm (u): 0.128596
+
+##### Mesh512Tri #####
+#####   exact function: x2y2 #####
+#####   order: 1 #####
+# Error #
+L2-Norm (u): 0.000698959
+L2-Norm (grad u):0.0643183
+H1-Norm (u): 0.0643221

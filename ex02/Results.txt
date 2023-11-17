@@ -1,0 +1,1498 @@
+##### Mesh1Quad #####
+#####   exact function: unity #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 5
+Solution coefficients:
+  1
+  1
+  1
+  1
+# Error #
+L2-Norm (u): 1.60128e-16
+L2-Norm (grad u):3.79284e-16
+H1-Norm (u): 4.117e-16
+
+##### Mesh4Quad #####
+#####   exact function: unity #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 12
+Solution coefficients:
+  1
+  1
+  1
+  1
+  1
+  1
+  1
+  1
+  1
+# Error #
+L2-Norm (u): 2.613e-16
+L2-Norm (grad u):4.48154e-16
+H1-Norm (u): 5.18768e-16
+
+##### Mesh2Tri #####
+#####   exact function: unity #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 6
+Solution coefficients:
+  1
+  1
+  1
+  1
+# Error #
+L2-Norm (u): 2.08976e-16
+L2-Norm (grad u):2.22045e-16
+H1-Norm (u): 3.04918e-16
+
+##### Mesh8Tri #####
+#####   exact function: unity #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 16
+Solution coefficients:
+  1
+  1
+  1
+  1
+  1
+  1
+  1
+  1
+  1
+# Error #
+L2-Norm (u): 1.18331e-16
+L2-Norm (grad u):6.23111e-16
+H1-Norm (u): 6.34247e-16
+
+##### Mesh1Quad #####
+#####   exact function: x #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 5
+Solution coefficients:
+  7.50046e-13
+  1
+  1
+  7.4987e-13
+# Error #
+L2-Norm (u): 4.32983e-13
+L2-Norm (grad u):1.49994e-12
+H1-Norm (u): 1.56119e-12
+
+##### Mesh4Quad #####
+#####   exact function: x #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 12
+Solution coefficients:
+  4.28581e-13
+  0.5
+  1
+  1
+  1
+  0.5
+  4.28609e-13
+  1.28569e-12
+  0.5
+# Error #
+L2-Norm (u): 5.15111e-13
+L2-Norm (grad u):2.04063e-12
+H1-Norm (u): 2.10464e-12
+
+##### Mesh2Tri #####
+#####   exact function: x #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 6
+Solution coefficients:
+  7.49954e-13
+  1
+  1
+  7.50031e-13
+# Error #
+L2-Norm (u): 4.33016e-13
+L2-Norm (grad u):1.50013e-12
+H1-Norm (u): 1.56138e-12
+
+##### Mesh8Tri #####
+#####   exact function: x #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 16
+Solution coefficients:
+  4.28581e-13
+  0.5
+  1
+  1
+  1
+  0.5
+  4.28597e-13
+  1.28571e-12
+  0.5
+# Error #
+L2-Norm (u): 5.24918e-13
+L2-Norm (grad u):2.26802e-12
+H1-Norm (u): 2.32798e-12
+
+##### Mesh1Quad #####
+#####   exact function: y #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 5
+Solution coefficients:
+  7.50067e-13
+  7.49854e-13
+  1
+  1
+# Error #
+L2-Norm (u): 4.33018e-13
+L2-Norm (grad u):1.50002e-12
+H1-Norm (u): 1.56127e-12
+
+##### Mesh4Quad #####
+#####   exact function: y #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 12
+Solution coefficients:
+  4.28607e-13
+  1.28569e-12
+  4.28607e-13
+  0.5
+  1
+  1
+  1
+  0.5
+  0.5
+# Error #
+L2-Norm (u): 5.15111e-13
+L2-Norm (grad u):2.04065e-12
+H1-Norm (u): 2.10466e-12
+
+##### Mesh2Tri #####
+#####   exact function: y #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 6
+Solution coefficients:
+  7.49908e-13
+  7.5e-13
+  1
+  1
+# Error #
+L2-Norm (u): 4.32996e-13
+L2-Norm (grad u):1.49991e-12
+H1-Norm (u): 1.56116e-12
+
+##### Mesh8Tri #####
+#####   exact function: y #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 16
+Solution coefficients:
+  4.28571e-13
+  1.28571e-12
+  4.28571e-13
+  0.5
+  1
+  1
+  1
+  0.5
+  0.5
+# Error #
+L2-Norm (u): 5.24984e-13
+L2-Norm (grad u):2.26839e-12
+H1-Norm (u): 2.32834e-12
+
+##### Mesh1Quad #####
+#####   exact function: xy #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 5
+Solution coefficients:
+  2.50055e-13
+  4.99902e-13
+  1
+  4.99878e-13
+# Error #
+L2-Norm (u): 3.48575e-13
+L2-Norm (grad u):1.33839e-12
+H1-Norm (u): 1.38304e-12
+
+##### Mesh4Quad #####
+#####   exact function: xy #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 12
+Solution coefficients:
+  -7.14201e-14
+  6.42837e-13
+  5.00065e-13
+  0.5
+  1
+  0.5
+  5.00063e-13
+  6.42843e-13
+  0.25
+# Error #
+L2-Norm (u): 4.00587e-13
+L2-Norm (grad u):1.65807e-12
+H1-Norm (u): 1.70577e-12
+
+##### Mesh2Tri #####
+#####   exact function: xy #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 6
+Solution coefficients:
+  -7.49964e-13
+  1.4999e-12
+  1
+  1.49995e-12
+# Error #
+L2-Norm (u): 0.105409
+L2-Norm (grad u):0.57735
+H1-Norm (u): 0.586894
+
+##### Mesh8Tri #####
+#####   exact function: xy #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 16
+Solution coefficients:
+  -3.21427e-13
+  6.42855e-13
+  7.50007e-13
+  0.5
+  1
+  0.5
+  7.50031e-13
+  6.42853e-13
+  0.25
+# Error #
+L2-Norm (u): 0.0263523
+L2-Norm (grad u):0.288675
+H1-Norm (u): 0.289875
+
+##### Mesh1Quad #####
+#####   exact function: x2 #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 5
+Solution coefficients:
+  -0.0833333
+  0.916667
+  0.916667
+  -0.0833333
+# Error #
+L2-Norm (u): 0.111803
+L2-Norm (grad u):0.57735
+H1-Norm (u): 0.588076
+
+##### Mesh4Quad #####
+#####   exact function: x2 #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 12
+Solution coefficients:
+  -0.0208333
+  0.197917
+  0.979167
+  1.01042
+  0.979167
+  0.197917
+  -0.0208333
+  0.0104167
+  0.229167
+# Error #
+L2-Norm (u): 0.0307248
+L2-Norm (grad u):0.301904
+H1-Norm (u): 0.303463
+
+##### Mesh2Tri #####
+#####   exact function: x2 #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 6
+Solution coefficients:
+  -0.0833333
+  0.916667
+  0.916667
+  -0.0833333
+# Error #
+L2-Norm (u): 0.111803
+L2-Norm (grad u):0.57735
+H1-Norm (u): 0.588076
+
+##### Mesh8Tri #####
+#####   exact function: x2 #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 16
+Solution coefficients:
+  -0.0208333
+  0.197917
+  0.979167
+  1.01042
+  0.979167
+  0.197917
+  -0.0208333
+  0.0104167
+  0.229167
+# Error #
+L2-Norm (u): 0.0307248
+L2-Norm (grad u):0.301904
+H1-Norm (u): 0.303463
+
+##### Mesh1Quad #####
+#####   exact function: y2 #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 5
+Solution coefficients:
+  -0.0833333
+  -0.0833333
+  0.916667
+  0.916667
+# Error #
+L2-Norm (u): 0.111803
+L2-Norm (grad u):0.57735
+H1-Norm (u): 0.588076
+
+##### Mesh4Quad #####
+#####   exact function: y2 #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 12
+Solution coefficients:
+  -0.0208333
+  0.0104167
+  -0.0208333
+  0.197917
+  0.979167
+  1.01042
+  0.979167
+  0.197917
+  0.229167
+# Error #
+L2-Norm (u): 0.0307248
+L2-Norm (grad u):0.301904
+H1-Norm (u): 0.303463
+
+##### Mesh2Tri #####
+#####   exact function: y2 #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 6
+Solution coefficients:
+  -0.0833333
+  -0.0833333
+  0.916667
+  0.916667
+# Error #
+L2-Norm (u): 0.111803
+L2-Norm (grad u):0.57735
+H1-Norm (u): 0.588076
+
+##### Mesh8Tri #####
+#####   exact function: y2 #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 16
+Solution coefficients:
+  -0.0208333
+  0.0104167
+  -0.0208333
+  0.197917
+  0.979167
+  1.01042
+  0.979167
+  0.197917
+  0.229167
+# Error #
+L2-Norm (u): 0.0307248
+L2-Norm (grad u):0.301904
+H1-Norm (u): 0.303463
+
+##### Mesh1Quad #####
+#####   exact function: x2y2 #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 5
+Solution coefficients:
+  0.0416667
+  -0.0833333
+  0.791667
+  -0.0833333
+# Error #
+L2-Norm (u): 0.0746132
+L2-Norm (grad u):0.384599
+H1-Norm (u): 0.39177
+
+##### Mesh4Quad #####
+#####   exact function: x2y2 #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 12
+Solution coefficients:
+  -0.00297619
+  0.00595238
+  -0.0208333
+  0.202381
+  0.96131
+  0.202381
+  -0.0208333
+  0.00595238
+  0.0572917
+# Error #
+L2-Norm (u): 0.0179901
+L2-Norm (grad u):0.188553
+H1-Norm (u): 0.189409
+
+##### Mesh2Tri #####
+#####   exact function: x2y2 #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 6
+Solution coefficients:
+  0.0416667
+  -0.0833333
+  0.791667
+  -0.0833333
+# Error #
+L2-Norm (u): 0.169472
+L2-Norm (grad u):0.824951
+H1-Norm (u): 0.842179
+
+##### Mesh8Tri #####
+#####   exact function: x2y2 #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 16
+Solution coefficients:
+  -0.00297619
+  0.00595238
+  -0.0208333
+  0.202381
+  0.96131
+  0.202381
+  -0.0208333
+  0.00595238
+  0.03125
+# Error #
+L2-Norm (u): 0.0455098
+L2-Norm (grad u):0.506654
+H1-Norm (u): 0.508693
+
+
+##### Mesh1Quad #####
+#####   exact function: unity #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 5
+Solution coefficients:
+  1
+  1
+  1.71661e-15
+  1
+  1.31119e-15
+  1
+  1.95026e-15
+  2.26498e-15
+  -2.23454e-15
+# Error #
+L2-Norm (u): 3.60967e-16
+L2-Norm (grad u):2.57317e-15
+H1-Norm (u): 2.59837e-15
+
+##### Mesh4Quad #####
+#####   exact function: unity #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 12
+Solution coefficients:
+  1
+  1
+  -1.54755e-16
+  1
+  -1.54755e-16
+  1
+  -1.57356e-16
+  1
+  -1.81776e-16
+  1
+  -1.55767e-16
+  1
+  -1.81776e-16
+  1
+  -1.55767e-16
+  -1.57356e-16
+  1
+  -5.48541e-17
+  -5.86546e-17
+  1.5753e-16
+  -1.81335e-16
+  1.58024e-16
+  -1.53515e-16
+  1.56125e-16
+  1.56125e-16
+# Error #
+L2-Norm (u): 1.44716e-16
+L2-Norm (grad u):7.18738e-16
+H1-Norm (u): 7.33162e-16
+
+##### Mesh2Tri #####
+#####   exact function: unity #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 6
+Solution coefficients:
+  1
+  1
+  2.00272e-16
+  1
+  0
+  1
+  1.43051e-16
+  3.52859e-16
+  6.66134e-16
+# Error #
+L2-Norm (u): 2.34808e-16
+L2-Norm (grad u):2.87914e-16
+H1-Norm (u): 3.71523e-16
+
+##### Mesh8Tri #####
+#####   exact function: unity #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 16
+Solution coefficients:
+  1
+  1
+  1.3998e-15
+  1
+  1.23486e-15
+  1
+  1.23356e-15
+  1
+  7.71604e-16
+  1
+  4.93272e-16
+  1
+  6.65896e-16
+  1
+  5.35849e-16
+  9.36838e-16
+  -1.35943e-05
+  0.999987
+  4.8347e-05
+  -5.08445e-05
+  -7.71298e-05
+  -3.42794e-05
+  0.000181042
+  9.80669e-05
+  -7.48763e-06
+# Error #
+L2-Norm (u): 1.32508e-05
+L2-Norm (grad u):0.000110073
+H1-Norm (u): 0.000110867
+
+##### Mesh1Quad #####
+#####   exact function: x #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 5
+Solution coefficients:
+  3.33069e-13
+  1
+  3.14713e-16
+  1
+  -8.33644e-13
+  3.33112e-13
+  -1.69873e-16
+  8.33626e-13
+  -4.15041e-17
+# Error #
+L2-Norm (u): 5.32868e-13
+L2-Norm (grad u):2.1547e-12
+H1-Norm (u): 2.21961e-12
+
+##### Mesh4Quad #####
+#####   exact function: x #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 12
+Solution coefficients:
+  4.70597e-13
+  0.5
+  -2.94166e-13
+  1
+  2.93993e-13
+  1
+  -4.41411e-13
+  1
+  -4.41617e-13
+  0.5
+  2.93549e-13
+  4.70679e-13
+  -2.94365e-13
+  8.23572e-13
+  4.411e-13
+  4.41122e-13
+  0.5
+  3.89717e-14
+  -2.16819e-16
+  -5.79558e-14
+  -3.91699e-14
+  5.85824e-14
+  -1.61484e-16
+  -5.802e-14
+  5.84298e-14
+# Error #
+L2-Norm (u): 4.74361e-13
+L2-Norm (grad u):2.49447e-12
+H1-Norm (u): 2.53917e-12
+
+##### Mesh2Tri #####
+#####   exact function: x #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 6
+Solution coefficients:
+  1.58345e-12
+  1
+  -4.29153e-16
+  1
+  1.66654e-12
+  1.5833e-12
+  1.11163e-16
+  -1.66672e-12
+  9.84898e-16
+# Error #
+L2-Norm (u): 7.76289e-13
+L2-Norm (grad u):2.72679e-12
+H1-Norm (u): 2.83513e-12
+
+##### Mesh8Tri #####
+#####   exact function: x #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 16
+Solution coefficients:
+  2.23485e-12
+  0.5
+  -1.39634e-12
+  1
+  1.3975e-12
+  1
+  3.52998e-12
+  1
+  3.52987e-12
+  0.5
+  1.39705e-12
+  2.23523e-12
+  -1.39696e-12
+  3.91183e-12
+  -3.52941e-12
+  -3.52916e-12
+  -5.29964e-07
+  0.499991
+  3.04413e-05
+  2.53405e-06
+  -2.94908e-05
+  -6.70684e-06
+  0.000104748
+  2.97341e-05
+  -1.49753e-06
+# Error #
+L2-Norm (u): 6.10406e-06
+L2-Norm (grad u):5.65555e-05
+H1-Norm (u): 5.68839e-05
+
+##### Mesh1Quad #####
+#####   exact function: y #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 5
+Solution coefficients:
+  3.32903e-13
+  3.33192e-13
+  8.33645e-13
+  1
+  -1.06313e-16
+  1
+  -8.32958e-13
+  8.2016e-16
+  -4.4886e-16
+# Error #
+L2-Norm (u): 5.32859e-13
+L2-Norm (grad u):2.15446e-12
+H1-Norm (u): 2.21937e-12
+
+##### Mesh4Quad #####
+#####   exact function: y #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 12
+Solution coefficients:
+  4.70643e-13
+  8.23526e-13
+  4.41149e-13
+  4.70585e-13
+  4.41185e-13
+  0.5
+  -2.94149e-13
+  1
+  2.93962e-13
+  1
+  -4.41357e-13
+  1
+  -4.41433e-13
+  0.5
+  2.93496e-13
+  -2.94411e-13
+  0.5
+  -1.09683e-16
+  -3.91165e-14
+  5.84347e-14
+  -4.64423e-17
+  5.82978e-14
+  3.90805e-14
+  -5.80398e-14
+  -5.81569e-14
+# Error #
+L2-Norm (u): 4.744e-13
+L2-Norm (grad u):2.49448e-12
+H1-Norm (u): 2.53919e-12
+
+##### Mesh2Tri #####
+#####   exact function: y #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 6
+Solution coefficients:
+  1.58355e-12
+  1.58333e-12
+  -1.66683e-12
+  1
+  -3.54377e-16
+  1
+  1.66589e-12
+  -6.19888e-16
+  -6.66134e-16
+# Error #
+L2-Norm (u): 7.76177e-13
+L2-Norm (grad u):2.72633e-12
+H1-Norm (u): 2.83466e-12
+
+##### Mesh8Tri #####
+#####   exact function: y #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 16
+Solution coefficients:
+  2.23513e-12
+  3.91193e-12
+  -3.5294e-12
+  2.23517e-12
+  -3.52944e-12
+  0.5
+  -1.39677e-12
+  1
+  1.39813e-12
+  1
+  3.5304e-12
+  1
+  3.52926e-12
+  0.5
+  1.39669e-12
+  -1.3971e-12
+  7.26736e-07
+  0.499979
+  3.66942e-05
+  5.16619e-05
+  8.26862e-05
+  1.78917e-06
+  0.000103326
+  3.74323e-05
+  -7.2737e-06
+# Error #
+L2-Norm (u): 5.38726e-06
+L2-Norm (grad u):6.21326e-05
+H1-Norm (u): 6.23657e-05
+
+##### Mesh1Quad #####
+#####   exact function: xy #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 5
+Solution coefficients:
+  -1.66726e-13
+  4.99895e-13
+  4.16765e-13
+  1
+  -4.16803e-13
+  4.99756e-13
+  -4.16708e-13
+  4.16861e-13
+  -6.11067e-17
+# Error #
+L2-Norm (u): 4.11971e-13
+L2-Norm (grad u):1.72845e-12
+H1-Norm (u): 1.77687e-12
+
+##### Mesh4Quad #####
+#####   exact function: xy #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 12
+Solution coefficients:
+  -2.94102e-14
+  4.11754e-13
+  7.35349e-14
+  4.99974e-13
+  3.67675e-13
+  0.5
+  -3.67582e-13
+  1
+  -7.3815e-14
+  0.5
+  -7.40751e-14
+  5.00052e-13
+  -3.67817e-13
+  4.11785e-13
+  3.676e-13
+  7.35159e-14
+  0.25
+  1.9524e-14
+  -1.96329e-14
+  1.10523e-16
+  -1.94915e-14
+  5.84211e-14
+  1.95604e-14
+  -5.81685e-14
+  -5.28625e-17
+# Error #
+L2-Norm (u): 3.7459e-13
+L2-Norm (grad u):1.9437e-12
+H1-Norm (u): 1.97947e-12
+
+##### Mesh2Tri #####
+#####   exact function: xy #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 6
+Solution coefficients:
+  1.08332e-12
+  4.99911e-13
+  -8.33273e-13
+  1
+  8.33325e-13
+  5.00014e-13
+  8.33257e-13
+  -8.33336e-13
+  -1
+# Error #
+L2-Norm (u): 6.04436e-13
+L2-Norm (grad u):2.09379e-12
+H1-Norm (u): 2.17929e-12
+
+##### Mesh8Tri #####
+#####   exact function: xy #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 16
+Solution coefficients:
+  1.11019e-12
+  1.95602e-12
+  -1.83824e-12
+  1.12494e-12
+  -1.69123e-12
+  0.5
+  4.4133e-13
+  1
+  3.08824e-12
+  0.5
+  3.08808e-12
+  1.12492e-12
+  4.41312e-13
+  1.95594e-12
+  -1.69117e-12
+  -1.83819e-12
+  -0.250001
+  0.250002
+  1.07911e-05
+  -2.32969e-05
+  -0.250069
+  -2.0809e-05
+  -0.249952
+  1.61388e-05
+  -0.250005
+# Error #
+L2-Norm (u): 5.29812e-06
+L2-Norm (grad u):4.56679e-05
+H1-Norm (u): 4.59742e-05
+
+##### Mesh1Quad #####
+#####   exact function: x2 #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 5
+Solution coefficients:
+  -1.67107e-13
+  1
+  -0.25
+  1
+  -1.45691e-12
+  -1.67316e-13
+  -0.25
+  2.09003e-13
+  -1.8735e-15
+# Error #
+L2-Norm (u): 7.76871e-13
+L2-Norm (grad u):2.96771e-12
+H1-Norm (u): 3.0677e-12
+
+##### Mesh4Quad #####
+#####   exact function: x2 #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 12
+Solution coefficients:
+  -2.93884e-14
+  0.25
+  -0.0625
+  1
+  -0.0625
+  1
+  -8.57792e-13
+  1
+  -8.57828e-13
+  0.25
+  -0.0625
+  -2.94113e-14
+  -0.0625
+  -9.80665e-15
+  2.4514e-14
+  2.45017e-14
+  0.25
+  -0.0625
+  -3.19385e-14
+  -5.83093e-14
+  -0.0625
+  5.79395e-14
+  -3.19432e-14
+  -5.8303e-14
+  5.79127e-14
+# Error #
+L2-Norm (u): 7.37783e-13
+L2-Norm (grad u):3.43296e-12
+H1-Norm (u): 3.51134e-12
+
+##### Mesh2Tri #####
+#####   exact function: x2 #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 6
+Solution coefficients:
+  -5.57259e-13
+  1
+  -0.25
+  1
+  4.08855e-12
+  -5.57443e-13
+  -0.25
+  7.55304e-13
+  -0.625
+# Error #
+L2-Norm (u): 0.104583
+L2-Norm (grad u):0.375
+H1-Norm (u): 0.38931
+
+##### Mesh8Tri #####
+#####   exact function: x2 #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 16
+Solution coefficients:
+  -3.67413e-14
+  0.25
+  -0.0625
+  1
+  -0.0625
+  1
+  6.96524e-12
+  1
+  6.96485e-12
+  0.25
+  -0.0625
+  -3.66783e-14
+  -0.0625
+  2.2527e-13
+  -9.44261e-14
+  -9.43902e-14
+  -0.175
+  0.268753
+  -0.231252
+  0.0187424
+  -0.212518
+  -0.231264
+  -0.212503
+  0.0187469
+  -0.175001
+# Error #
+L2-Norm (u): 0.0212406
+L2-Norm (grad u):0.136931
+H1-Norm (u): 0.138568
+
+##### Mesh1Quad #####
+#####   exact function: y2 #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 5
+Solution coefficients:
+  -1.67392e-13
+  -1.67178e-13
+  2.09084e-13
+  1
+  -0.25
+  1
+  -1.45619e-12
+  -0.25
+  -2.36139e-15
+# Error #
+L2-Norm (u): 7.76905e-13
+L2-Norm (grad u):2.96751e-12
+H1-Norm (u): 3.06752e-12
+
+##### Mesh4Quad #####
+#####   exact function: y2 #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 12
+Solution coefficients:
+  -2.94238e-14
+  -9.80901e-15
+  2.45268e-14
+  -2.94155e-14
+  2.45216e-14
+  0.25
+  -0.0625
+  1
+  -0.0625
+  1
+  -8.57715e-13
+  1
+  -8.57745e-13
+  0.25
+  -0.0625
+  -0.0625
+  0.25
+  -3.20902e-14
+  -0.0625
+  5.80737e-14
+  -3.20556e-14
+  5.79819e-14
+  -0.0625
+  -5.82277e-14
+  -5.82447e-14
+# Error #
+L2-Norm (u): 7.37795e-13
+L2-Norm (grad u):3.43301e-12
+H1-Norm (u): 3.5114e-12
+
+##### Mesh2Tri #####
+#####   exact function: y2 #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 6
+Solution coefficients:
+  -5.57314e-13
+  -5.57375e-13
+  7.55253e-13
+  1
+  -0.25
+  1
+  4.08877e-12
+  -0.25
+  -0.625
+# Error #
+L2-Norm (u): 0.104583
+L2-Norm (grad u):0.375
+H1-Norm (u): 0.38931
+
+##### Mesh8Tri #####
+#####   exact function: y2 #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 16
+Solution coefficients:
+  -3.66856e-14
+  2.2549e-13
+  -9.45594e-14
+  -3.65974e-14
+  -9.46467e-14
+  0.25
+  -0.0625
+  1
+  -0.0625
+  1
+  6.96401e-12
+  1
+  6.9644e-12
+  0.25
+  -0.0625
+  -0.0625
+  -0.175003
+  0.268767
+  0.018737
+  -0.231316
+  -0.212607
+  0.0187021
+  -0.212515
+  -0.231279
+  -0.174996
+# Error #
+L2-Norm (u): 0.0212396
+L2-Norm (grad u):0.136931
+H1-Norm (u): 0.138568
+
+##### Mesh1Quad #####
+#####   exact function: x2y2 #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 5
+Solution coefficients:
+  -1.08649e-16
+  -2.38037e-16
+  2.28882e-16
+  1
+  -0.25
+  -3.23956e-16
+  -0.25
+  2.69413e-16
+  0.0625
+# Error #
+L2-Norm (u): 4.4723e-13
+L2-Norm (grad u):1.39044e-12
+H1-Norm (u): 1.4606e-12
+
+##### Mesh4Quad #####
+#####   exact function: x2y2 #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 12
+Solution coefficients:
+  -6.33958e-19
+  -8.64633e-18
+  5.80018e-18
+  -2.18478e-17
+  2.08074e-17
+  0.25
+  -0.0625
+  1
+  -0.0625
+  0.25
+  -0.0625
+  0
+  -0.0625
+  4.84259e-18
+  -3.94166e-18
+  -2.63039e-18
+  0.0625
+  -0.015625
+  -0.015625
+  0.00390625
+  -0.015625
+  0.00390625
+  -0.015625
+  0.00390625
+  0.00390625
+# Error #
+L2-Norm (u): 4.57711e-13
+L2-Norm (grad u):1.37898e-12
+H1-Norm (u): 1.45296e-12
+
+##### Mesh2Tri #####
+#####   exact function: x2y2 #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 4
+Read mesh elements = 6
+Solution coefficients:
+  1.30218e-13
+  -9.7383e-13
+  5.44195e-13
+  1
+  -0.25
+  -9.7398e-13
+  -0.25
+  5.44274e-13
+  -1.425
+# Error #
+L2-Norm (u): 0.103235
+L2-Norm (grad u):0.323054
+H1-Norm (u): 0.339148
+
+##### Mesh8Tri #####
+#####   exact function: x2y2 #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 5
+Read mesh entities = 9
+Read mesh entities with physical tags = 5
+Read mesh nodes = 9
+Read mesh elements = 16
+Solution coefficients:
+  8.47214e-14
+  1.06469e-13
+  -1.18644e-13
+  -5.20927e-13
+  2.72711e-13
+  0.25
+  -0.0625
+  1
+  -0.0625
+  0.25
+  -0.0625
+  -5.20918e-13
+  -0.0625
+  1.06434e-13
+  2.72721e-13
+  -1.18622e-13
+  -0.289585
+  0.0833327
+  -0.0654655
+  -0.0387064
+  -0.777715
+  -0.0387065
+  -0.134778
+  -0.065462
+  -0.289585
+# Error #
+L2-Norm (u): 0.0220746
+L2-Norm (grad u):0.119141
+H1-Norm (u): 0.121168
