@@ -64,16 +64,15 @@ void Analysis::RunSimulation() {
     F.setZero();
 
     assemb.Compute(K, F);
-    // std::cout << "Assemble done!" << std::endl;
-    // std::cout << "Stiffness Matrix:" << std::endl;
-    // std::cout << K << std::endl;
-    // std::cout << "Force Vector:" << std::endl;
-    // std::cout << F << std::endl;
+    if (IsDebug()){
+        std::cout << "Stiffness Matrix:" << std::endl;
+        std::cout << K << std::endl;
+        std::cout << "Force Vector:" << std::endl;
+        std::cout << F << std::endl;
+    }
 
     GlobalSystem = K;
     RightHandSide = F;
-
-    // std::cout << "Computing solution..." << std::endl;
 
     SparseLU<SparseMat, COLAMDOrdering<int> >   solver;
     // Compute the ordering permutation vector from the structural pattern of A
@@ -87,8 +86,6 @@ void Analysis::RunSimulation() {
     }
     //Use the factors to solve the linear system
     Solution = solver.solve(F);
-
-    // std::cout << "Solution computed!" << std::endl;
 
     int solsize = Solution.rows();
     VecDouble sol(solsize);

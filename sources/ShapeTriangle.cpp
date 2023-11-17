@@ -42,14 +42,16 @@ void ShapeTriangle::Shape(const VecDouble &xi, VecInt &orders, VecDouble &phi, M
 
     // Linear
     phi[0] =  1.-xi[0]-xi[1];
+    dphi(0, 0) = -1.;
+    dphi(1, 0) = -1.;
+
     phi[1] =  xi[0];
+    dphi(0, 1) =  1.;
+    dphi(1, 1) =  0.;
+
     phi[2] =  xi[1];
-    dphi(0,0) = -1.;
-    dphi(1,0) = -1.;
-    dphi(0,1) =  1.;
-    dphi(1,1) =  0.;
-    dphi(0,2) =  0.;
-    dphi(1,2) =  1.;
+    dphi(0, 2) =  0.;
+    dphi(1, 2) =  1.;
 
     int nfi= 3;
 
@@ -96,7 +98,7 @@ int ShapeTriangle::NShapeFunctions(int side, int order){
         case 5:
             return order-1;
         case 6:
-            return 0;
+            return (order-1)*(order-1); //0;
     }
 
     DebugStop();
