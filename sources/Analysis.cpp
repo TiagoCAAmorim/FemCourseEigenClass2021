@@ -93,8 +93,12 @@ void Analysis::RunSimulation() {
     std::cout<< "Solution coefficients: " << solsize << endl;
     for (int i = 0; i < solsize; i++) {
         sol[i] = Solution(i, 0);
-        std::cout<< "  " << sol[i] <<endl;
+        std::cout<< "  " << sol[i] <<", ";
+        if ((i+1) % 10 == 0){
+            std::cout<< std::endl;
+        }
     }
+    std::cout<< std::endl;
     cmesh->LoadSolution(sol);
 }
 

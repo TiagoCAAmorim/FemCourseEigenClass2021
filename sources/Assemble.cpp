@@ -66,7 +66,9 @@ void Assemble::Compute(SparseMat &globmat, MatrixDouble &rhs) {
         ek.setZero();
         ef.setZero();
 
-        // std::cout << "    Element #" << (el+1) << ": " << nshape << " shape function(s)." << std::endl;
+        if (IsDebug()) {
+            std::cout << "    Element #" << (el+1) << ": " << nshape << " shape function(s)." << std::endl;
+        }
         cel->CalcStiff(ek, ef);
 
         VecInt destIndex(neqs);

@@ -1,4 +1,4 @@
-ElementsType; Elements; ExactFunction; Order; PhysicalNames; MeshEntities; EntitiesPhysicalTags; MeshNodes; MeshElements; Coefficients; L2NormU; L2NormGradU; H1NormU
+ElementsType; Elements; ExactFunction; Order; PhysicalNames; MeshEntities; EntitiesPhysicalTags; MeshNodes; MeshElements; Coefficients; CoefficientList; L2NormU; L2NormGradU; H1NormU
 Quad; 1; unity; 1; 5; 9; 5; 4; 5; 4; (1, 1, 1, 1); 1.60128e-16; 3.79284e-16; 4.117e-16
 Quad; 4; unity; 1; 5; 9; 5; 9; 12; 9; (1, 1, 1, 1, 1, 1, 1, 1, 1); 2.613e-16; 4.48154e-16; 5.18768e-16
 Tri; 2; unity; 1; 5; 9; 5; 4; 6; 4; (1, 1, 1, 1); 2.08976e-16; 2.22045e-16; 3.04918e-16
