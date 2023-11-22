@@ -12,8 +12,9 @@
 void ShapeQuad::Shape(const VecDouble &xi, VecInt &orders, VecDouble &phi, MatrixDouble &dphi){
 
     // Duvida: devo assumir que sempre serao 4 ou 9 lados? (lin/quad)
-    DebugStop(orders.size() <= 9, "ShapeQuad::Shape: Invalid number of sides in Quad element (>9).");
-    DebugStop(orders.size() >= 4, "ShapeQuad::Shape: Invalid number of sides in Quad element (<4).");
+    // DebugStop(orders.size() <= 9, "ShapeQuad::Shape: Invalid number of sides in Quad element (>9).");
+    // DebugStop(orders.size() >= 4, "ShapeQuad::Shape: Invalid number of sides in Quad element (<4).");
+    DebugStop(orders.size() == 9, "ShapeQuad::Shape: Invalid number of sides in Quad element (!=9).");
 
     for (int i = 0; i < orders.size(); i++)
     {
@@ -63,6 +64,14 @@ void ShapeQuad::Shape(const VecDouble &xi, VecInt &orders, VecDouble &phi, Matri
     // Duvida: Posso ter um dos lados linear e os outros quadraticos? Como fica a ordem?
     // Duvida: Como fazer com ordens superiores? Como garanto que a funcao de 3a ordem esta da direcao 'correta'?
     int nfi= 4;
+
+    // for (int i=4; i<9; i++){
+    //     if (orders[i] == 2){
+    //         int aux1 = SideNodeLocIndex(i,0);
+    //         int aux2 = SideNodeLocIndex(i,1);
+    //         phi[i] = phi[aux1] * phi[aux2];
+    //     }
+    // }
 
     if (orders.size() > 4){
         if (NShapeFunctions(4, orders[4]) > 0){

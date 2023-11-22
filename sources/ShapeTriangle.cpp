@@ -11,8 +11,9 @@
 /// computes the shape functions in function of the coordinate in parameter space and orders of the shape functions (size of orders is number of sides of the element topology)
 void ShapeTriangle::Shape(const VecDouble &xi, VecInt &orders, VecDouble &phi, MatrixDouble &dphi){
     // Duvida: devo assumir que sempre serao 3 ou 7 lados? (lin/quad)
-    DebugStop(orders.size() <= 7, "ShapeQuad::Shape: Invalid number of sides in Triangular element (>7).");
-    DebugStop(orders.size() >= 3, "ShapeQuad::Shape: Invalid number of sides in Triangular element (<3).");
+    // DebugStop(orders.size() <= 7, "ShapeQuad::Shape: Invalid number of sides in Triangular element (>7).");
+    // DebugStop(orders.size() >= 3, "ShapeQuad::Shape: Invalid number of sides in Triangular element (<3).");
+    DebugStop(orders.size() == 7, "ShapeQuad::Shape: Invalid number of sides in Triangular element (!=7).");
 
     for (int i = 0; i < orders.size(); i++)
     {
@@ -58,27 +59,27 @@ void ShapeTriangle::Shape(const VecDouble &xi, VecInt &orders, VecDouble &phi, M
     // Quadratic
     if (orders.size() > 3){
         if (NShapeFunctions(3, orders[3]) > 0){
-            phi[nfi] = (1.-xi[0]-xi[1]) * xi[0];
-            dphi(0, nfi) = 1 - 2*xi[0] - xi[1];
-            dphi(1, nfi) = -xi[0];
+            phi[nfi] = 4.*(1.-xi[0]-xi[1]) * xi[0];
+            dphi(0, nfi) = 4.*(1 - 2*xi[0] - xi[1]);
+            dphi(1, nfi) = -4.*xi[0];
             nfi++;
         };
         if (NShapeFunctions(4, orders[4]) > 0){
-            phi[nfi] = xi[0] * xi[1];
-            dphi(0, nfi) = xi[1];
-            dphi(1, nfi) = xi[0];
+            phi[nfi] = 4.*xi[0] * xi[1];
+            dphi(0, nfi) = 4.*xi[1];
+            dphi(1, nfi) = 4.*xi[0];
             nfi++;
         };
         if (NShapeFunctions(5, orders[5]) > 0){
-            phi[nfi] = (1.-xi[0]-xi[1]) * xi[1];
-            dphi(0, nfi) = -xi[1];
-            dphi(1, nfi) = 1 - 2*xi[1] - xi[0];
+            phi[nfi] = 4.*(1.-xi[0]-xi[1]) * xi[1];
+            dphi(0, nfi) = -4.*xi[1];
+            dphi(1, nfi) = 4.*(1 - 2*xi[1] - xi[0]);
             nfi++;
         };
         if (NShapeFunctions(6, orders[6]) > 0){
-            phi[nfi] = (1.-xi[0]-xi[1]) * xi[0] * xi[1];
-            dphi(0, nfi) = xi[1] - xi[1]*xi[1] - 2 * xi[0] * xi[1];
-            dphi(1, nfi) = xi[0] - xi[0]*xi[0] - 2 * xi[0] * xi[1];
+            phi[nfi] = 27.*(1.-xi[0]-xi[1]) * xi[0] * xi[1];
+            dphi(0, nfi) = 27.*(1- xi[1] - 2 * xi[0]) * xi[1];
+            dphi(1, nfi) = 27.*(1 - xi[0] - 2 * xi[1]) * xi[0];
             nfi++;
         };
     }
