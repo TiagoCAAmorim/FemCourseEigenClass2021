@@ -91,14 +91,14 @@ void Analysis::RunSimulation() {
     VecDouble sol(solsize);
 
     std::cout<< "Solution coefficients: " << solsize << endl;
-    for (int i = 0; i < solsize; i++) {
-        sol[i] = Solution(i, 0);
-        std::cout<< "  " << sol[i] <<", ";
-        if ((i+1) % 10 == 0){
-            std::cout<< std::endl;
-        }
-    }
-    std::cout<< std::endl;
+    // for (int i = 0; i < solsize; i++) {
+    //     sol[i] = Solution(i, 0);
+    //     std::cout<< "  " << sol[i] <<", ";
+    //     if ((i+1) % 10 == 0){
+    //         std::cout<< std::endl;
+    //     }
+    // }
+    // std::cout<< std::endl;
     cmesh->LoadSolution(sol);
 }
 
