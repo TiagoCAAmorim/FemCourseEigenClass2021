@@ -33,3 +33,6 @@ target_link_libraries (TestThreeDProblem Eigen3::Eigen)
 
 add_executable(ExerciseTwo ExerciseTwo.cpp ${SOURCES} ${HEADERS})
 target_link_libraries (ExerciseTwo Eigen3::Eigen)
+
+add_executable(ExerciseTwo ExerciseThree.cpp ${SOURCES} ${HEADERS})
+target_link_libraries (ExerciseThree Eigen3::Eigen)
