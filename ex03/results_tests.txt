@@ -1,0 +1,239 @@
+##### MalhaAnelQuad_01 #####
+#####   exact function: x #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 2
+Read mesh entities = 10
+Read mesh entities with physical tags = 5
+Read mesh nodes = 36
+Read mesh elements = 45
+Solution coefficients: 36
+# Error #
+L2-Norm (u): 1.87777e-12
+L2-Norm (grad u):2.85899e-12
+H1-Norm (u): 3.42051e-12
+
+##### MalhaAnelQuad_01 #####
+#####   exact function: x #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 2
+Read mesh entities = 10
+Read mesh entities with physical tags = 5
+Read mesh nodes = 36
+Read mesh elements = 45
+Solution coefficients: 121
+# Error #
+L2-Norm (u): 1.83976e-12
+L2-Norm (grad u):3.18354e-12
+H1-Norm (u): 3.6769e-12
+
+##### MalhaAnelTria_01 #####
+#####   exact function: x #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 2
+Read mesh entities = 10
+Read mesh entities with physical tags = 5
+Read mesh nodes = 35
+Read mesh elements = 68
+Solution coefficients: 35
+# Error #
+L2-Norm (u): 1.86893e-12
+L2-Norm (grad u):2.67225e-12
+H1-Norm (u): 3.26095e-12
+
+##### MalhaAnelTria_01 #####
+#####   exact function: x #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 2
+Read mesh entities = 10
+Read mesh entities with physical tags = 5
+Read mesh nodes = 35
+Read mesh elements = 68
+Solution coefficients: 169
+# Error #
+L2-Norm (u): 1.83854e-12
+L2-Norm (grad u):2.96787e-12
+H1-Norm (u): 3.4912e-12
+
+##### MalhaAnelQuad_01 #####
+#####   exact function: xy #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 2
+Read mesh entities = 10
+Read mesh entities with physical tags = 5
+Read mesh nodes = 36
+Read mesh elements = 45
+Solution coefficients: 36
+# Error #
+L2-Norm (u): 0.185437
+L2-Norm (grad u):1.11897
+H1-Norm (u): 1.13424
+
+##### MalhaAnelQuad_01 #####
+#####   exact function: xy #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 2
+Read mesh entities = 10
+Read mesh entities with physical tags = 5
+Read mesh nodes = 36
+Read mesh elements = 45
+Solution coefficients: 121
+# Error #
+L2-Norm (u): 8.45026e-12
+L2-Norm (grad u):1.48752e-11
+H1-Norm (u): 1.71079e-11
+
+##### MalhaAnelTria_01 #####
+#####   exact function: xy #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 2
+Read mesh entities = 10
+Read mesh entities with physical tags = 5
+Read mesh nodes = 35
+Read mesh elements = 68
+Solution coefficients: 35
+# Error #
+L2-Norm (u): 0.27912
+L2-Norm (grad u):1.57643
+H1-Norm (u): 1.60095
+
+##### MalhaAnelTria_01 #####
+#####   exact function: xy #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 2
+Read mesh entities = 10
+Read mesh entities with physical tags = 5
+Read mesh nodes = 35
+Read mesh elements = 68
+Solution coefficients: 169
+# Error #
+L2-Norm (u): 8.41799e-12
+L2-Norm (grad u):1.38378e-11
+H1-Norm (u): 1.61971e-11
+
+##### MalhaAnelQuad_01 #####
+#####   exact function: x2 #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 2
+Read mesh entities = 10
+Read mesh entities with physical tags = 5
+Read mesh nodes = 36
+Read mesh elements = 45
+Solution coefficients: 36
+# Error #
+L2-Norm (u): 0.444145
+L2-Norm (grad u):1.94938
+H1-Norm (u): 1.99934
+
+##### MalhaAnelQuad_01 #####
+#####   exact function: x2 #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 2
+Read mesh entities = 10
+Read mesh entities with physical tags = 5
+Read mesh nodes = 36
+Read mesh elements = 45
+Solution coefficients: 121
+# Error #
+L2-Norm (u): 1.2299e-11
+L2-Norm (grad u):1.73228e-11
+H1-Norm (u): 2.12448e-11
+
+##### MalhaAnelTria_01 #####
+#####   exact function: x2 #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 2
+Read mesh entities = 10
+Read mesh entities with physical tags = 5
+Read mesh nodes = 35
+Read mesh elements = 68
+Solution coefficients: 35
+# Error #
+L2-Norm (u): 0.314523
+L2-Norm (grad u):1.89217
+H1-Norm (u): 1.91813
+
+##### MalhaAnelTria_01 #####
+#####   exact function: x2 #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 2
+Read mesh entities = 10
+Read mesh entities with physical tags = 5
+Read mesh nodes = 35
+Read mesh elements = 68
+Solution coefficients: 169
+# Error #
+L2-Norm (u): 1.2458e-11
+L2-Norm (grad u):1.62327e-11
+H1-Norm (u): 2.04622e-11
+
+##### MalhaAnelQuad_01 #####
+#####   exact function: x2y2 #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 2
+Read mesh entities = 10
+Read mesh entities with physical tags = 5
+Read mesh nodes = 36
+Read mesh elements = 45
+Solution coefficients: 36
+# Error #
+L2-Norm (u): 9.7772
+L2-Norm (grad u):37.1194
+H1-Norm (u): 38.3855
+
+##### MalhaAnelQuad_01 #####
+#####   exact function: x2y2 #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 2
+Read mesh entities = 10
+Read mesh entities with physical tags = 5
+Read mesh nodes = 36
+Read mesh elements = 45
+Solution coefficients: 121
+# Error #
+L2-Norm (u): 0.351711
+L2-Norm (grad u):2.32751
+H1-Norm (u): 2.35393
+
+##### MalhaAnelTria_01 #####
+#####   exact function: x2y2 #####
+#####   order: 1 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 2
+Read mesh entities = 10
+Read mesh entities with physical tags = 5
+Read mesh nodes = 35
+Read mesh elements = 68
+Solution coefficients: 35
+# Error #
+L2-Norm (u): 9.01153
+L2-Norm (grad u):43.5304
+H1-Norm (u): 44.4534
+
+##### MalhaAnelTria_01 #####
+#####   exact function: x2y2 #####
+#####   order: 2 #####
+Reading mesh format = 4.1 0 8
+Read mesh number of physical names = 2
+Read mesh entities = 10
+Read mesh entities with physical tags = 5
+Read mesh nodes = 35
+Read mesh elements = 68
+Solution coefficients: 169
+# Error #
+L2-Norm (u): 0.221707
+L2-Norm (grad u):2.48893
+H1-Norm (u): 2.49879
