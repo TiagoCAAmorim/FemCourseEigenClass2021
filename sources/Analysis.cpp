@@ -135,7 +135,7 @@ VecDouble Analysis::PostProcessError(std::ostream &out, PostProcess &defPostProc
                 	values.setZero();
                 }
                 for (int ier = 0; ier < nerrors; ier++) {
-                    values[ier] += errors[ier] * errors[ier];
+                    values[ier] += errors[ier];
                 }
             }
         }

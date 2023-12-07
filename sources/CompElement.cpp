@@ -243,10 +243,6 @@ void CompElement::EvaluateError(std::function<void(const VecDouble &loc, VecDoub
         for (int ier = 0; ier < NErrors; ier++)
             errors[ier] += weight * values[ier];
     }
-
-    for (int ier = 0; ier < NErrors; ier++) {
-        errors[ier] = sqrt(errors[ier]);
-    }
 }
 
 void CompElement::Solution(VecDouble &intpoint, int var, VecDouble &sol) const {
